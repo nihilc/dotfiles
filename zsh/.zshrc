@@ -9,7 +9,7 @@ source $ZDOTDIR/config/keybinds
 ### Aliases ###
 source $ZDOTDIR/config/aliases
 ### PROMPT ###
-ZSH_THEME="simple2"
+ZSH_THEME="simple3"
 source $ZDOTDIR/themes/$ZSH_THEME.zsh
 ### LOGIN ###
 ## Show beam cursor in new prompt
