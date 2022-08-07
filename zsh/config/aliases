@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# utils
+alias zshrc-source="source ~/.config/zsh/.zshrc"
+alias notify-test="notify-send notify low -u low; notify-send notify normal -u normal; notify-send notify critical -u critical"
+alias cfetch="clear; pfetch; sh ~/.config/scripts/blocks1"
+
+# Basic
+alias ls="lsd --group-dirs=first"
+alias ll="ls -lF"
+alias la="ls -lAF"
+
+alias rm="rm -i"
+
+alias tree="tree -C --dirsfirst"
+
+# Fix .wget-hsts location
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"

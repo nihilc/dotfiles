@@ -1,0 +1,13 @@
+#!/bin/sh
+
+setxkbmap es &
+sxhkd &
+
+polybar &
+dunst &
+picom &
+redshift &
+
+feh --bg-scale --no-fehbg ~/Pictures/wall1.jpg &
+
+exec bspwm

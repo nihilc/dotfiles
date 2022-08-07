@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+# history search tool
+bindkey '^R' history-incremental-pattern-search-backward
+
+# Key Blinding
+bindkey '^?' backward-delete-char
+bindkey '^[[3~' delete-char
+bindkey '^[[1~' beginning-of-line   # home
+bindkey '^[[4~' end-of-line         # end
+bindkey '^[[1;5D' backward-word     # C-left
+bindkey '^[[1;5C' forward-word      # C-right
+
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
