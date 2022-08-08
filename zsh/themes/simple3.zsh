@@ -15,6 +15,5 @@ ZSH_THEME_USER='%F{05}%B%S  %n %s%b%f'
 ZSH_THEME_DIR='%F{04}%B%S  %3~ %s%b%f'
 
 setopt PROMPT_SUBST
-PROMPT='
-${ZSH_THEME_USER}${sep1r}${sep2r}${ZSH_THEME_DIR}${sep3r} ${vcs_info_msg_0_}
+PROMPT='${ZSH_THEME_USER}${sep1r}${sep2r}${ZSH_THEME_DIR}${sep3r} ${vcs_info_msg_0_}
 %F{02}%B%b%f '
