@@ -22,5 +22,6 @@ zsh/histfile
 zsh/.zcompdump
 
 tmux/plugins
+tmux/resurrect
 
 ranger/plugins
