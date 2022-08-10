@@ -13,4 +13,4 @@ ZSH_THEME="simple3"
 source $ZDOTDIR/themes/$ZSH_THEME.zsh
 ### LOGIN ###
 ## Show beam cursor in new prompt
-echo -ne '\e[5 q'
+precmd(){echo -ne '\e[5 q'}

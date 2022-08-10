@@ -1,19 +1,22 @@
-GIMP/*
-QtProject.conf
-StardewValley/*
-chromium/*
-dconf/*
-gcolor3/*
-git/*
-gtk-2.0/*
-gtk-3.0/*
-gtk-4.0/*
-mimeapps.list
-obs-studio/*
+chromium
+vlc
+GIMP
+obs-studio
+qBittorrent
+StarUML
+StardewValley
+
+dconf
+git
+gtk-2.0
+gtk-3.0
+gtk-4.0
+pulse
+gcolor3
 pavucontrol.ini
-pulse/*
-qBittorrent/*
-vlc/*
+mimeapps.list
+QtProject.conf
+
 
 nvim
 
