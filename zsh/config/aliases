@@ -5,6 +5,8 @@ alias zshrc-source="source ~/.config/zsh/.zshrc"
 alias notify-test="notify-send notify low -u low; notify-send notify normal -u normal; notify-send notify critical -u critical"
 alias cfetch="clear; pfetch; sh ~/.config/scripts/blocks1"
 
+alias lampp="sudo /opt/lampp/lampp"
+
 # Basic
 alias ls="lsd --group-dirs=first"
 alias ll="ls -lF"
