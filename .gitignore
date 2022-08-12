@@ -17,8 +17,8 @@ pavucontrol.ini
 mimeapps.list
 QtProject.conf
 
-
 nvim
+lvim
 
 zsh/plugins/*
 zsh/histfile
