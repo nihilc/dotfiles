@@ -19,6 +19,7 @@ QtProject.conf
 
 nvim
 lvim
+Code
 
 zsh/plugins/*
 zsh/histfile
