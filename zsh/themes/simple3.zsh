@@ -7,7 +7,7 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 
 theme_precmd () {
-  if [[ -z $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+  if [[ -z $(git status -s 2> /dev/null) ]]; then
     zstyle ':vcs_info:git:*' formats '%F{#1a1b26}%K{02} שׂ %b ✔ %k%f%F{02}%K{#1a1b26}%k%f'
   else
     zstyle ':vcs_info:git:*' formats '%F{#1a1b26}%K{02} שׂ %b ✘ %k%f%F{02}%K{#1a1b26}%k%f'
