@@ -5,11 +5,11 @@ bindkey '^R' history-incremental-pattern-search-backward
 
 # Key Blinding
 bindkey '^?' backward-delete-char
-bindkey '^[[3~' delete-char
+bindkey '^[[3~' delete-char         # del
 bindkey '^[[1~' beginning-of-line   # home
 bindkey '^[[4~' end-of-line         # end
-bindkey '^[[1;5D' backward-word     # C-left
-bindkey '^[[1;5C' forward-word      # C-right
+bindkey '^[h' backward-char         # M-h
+bindkey '^[l' forward-char          # M-l
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
