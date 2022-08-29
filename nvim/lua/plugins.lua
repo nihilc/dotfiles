@@ -48,6 +48,10 @@ packer.startup({
         'hrsh7th/cmp-cmdline',
         'hrsh7th/cmp-nvim-lua',
         'hrsh7th/cmp-nvim-lsp',
+        "onsails/lspkind-nvim",
+        -- Luasnip
+        'saadparwaiz1/cmp_luasnip',
+        'L3MON4D3/LuaSnip'
       }
     }
 

@@ -4,15 +4,34 @@ if not present then
   return
 end
 
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 ---- Setup servers
 -- Html
-lspconfig.html.setup { on_attach = lsp_keymap }
+lspconfig.html.setup {
+  on_attach = lsp_keymap,
+  capabilities = capabilities,
+  filetypes = { 'html', 'php'}
+}
 -- Css
-lspconfig.cssls.setup { on_attach = lsp_keymap }
+lspconfig.cssls.setup {
+  on_attach = lsp_keymap,
+  capabilities = capabilities,
+}
 -- Php
-lspconfig.intelephense.setup { on_attach = lsp_keymap }
+lspconfig.phpactor.setup {
+  on_attach = lsp_keymap,
+  capabilities = capabilities,
+  init_options = {
+    ["language_server_phpstan.enabled"] = false,
+    ["language_server_psalm.enabled"] = false,
+  }
+}
+
 -- Lua
-lspconfig.sumneko_lua.setup { on_attach = lsp_keymap,
+lspconfig.sumneko_lua.setup {
+  on_attach = lsp_keymap,
+  capabilities = capabilities,
   settings = {
     Lua = {
       runtime = { version = 'LuaJIT' },
@@ -23,7 +42,10 @@ lspconfig.sumneko_lua.setup { on_attach = lsp_keymap,
   },
 }
 -- C and C++
-lspconfig.clangd.setup { on_attach = lsp_keymap }
+lspconfig.clangd.setup {
+  on_attach = lsp_keymap,
+  capabilities = capabilities,
+}
 
 
 ---- Diagnostic icons

@@ -1,71 +1,105 @@
-local cmp = require 'cmp'
+local has_words_before = function()
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
 
+local cmp = require('cmp')
+local lspkind = require("lspkind")
+local luasnip = require("luasnip")
+
+-- Change borders of menu
+local function border(hl_name)
+  return {
+    { "┌", hl_name },
+    { "─", hl_name },
+    { "┐", hl_name },
+    { "│", hl_name },
+    { "┘", hl_name },
+    { "─", hl_name },
+    { "└", hl_name },
+    { "│", hl_name },
+  }
+end
+local cmp_window = require "cmp.utils.window"
+cmp_window.info_ = cmp_window.info
+cmp_window.info = function(self)
+  local info = self:info_()
+  info.scrollable = false
+  return info
+end
 
 cmp.setup({
   snippet = {
-    -- REQUIRED - you must specify a snippet engine
     expand = function(args)
-      -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-      -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-      -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-    end,
+      require('luasnip').lsp_expand(args.body)
+    end
   },
+
+  sources = require('cmp').config.sources({
+    { name = 'nvim_lua' },
+    { name = 'nvim_lsp' },
+    { name = 'path' },
+    { name = 'luasnip' },
+    { name = 'buffer',
+      keyword_length = 4 },
+  }),
+
   mapping = {
-    ["<C-p>"] = cmp.mapping.select_prev_item(),
-    ["<C-n>"] = cmp.mapping.select_next_item(),
-    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(),
-    ["<C-e>"] = cmp.mapping.close(),
-    ["<C-y>"] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = false,
+    ["<C-d>"] = require('cmp').mapping.scroll_docs(-4),
+    ["<C-f>"] = require('cmp').mapping.scroll_docs(4),
+    ["<C-e>"] = require('cmp').mapping.abort(),
+    ['<C-y>'] = require('cmp').mapping.confirm({ select = true }),
+    ["<c-space>"] = require('cmp').mapping.complete(),
+
+    ["<C-n>"] = require('cmp').mapping(function(fallback)
+      if require('cmp').visible() then
+        require('cmp').select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      elseif has_words_before() then
+        require('cmp').complete()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+    ["<C-p>"] = require('cmp').mapping(function(fallback)
+      if require('cmp').visible() then
+        require('cmp').select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+  },
+
+  formatting = {
+    format = lspkind.cmp_format({
+      with_text = true,
+      menu = {
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[api]",
+        path = "[path]",
+        buffer = "[buf]",
+        luasnip = "[snip]",
+      },
+    }),
+  },
+
+  experimental = {
+    native_menu = false,
+
+    ghost_text = true,
+  },
+
+  window = {
+    completion = {
+      border = border "CmpBorder",
+      winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+    },
+    documentation = {
+      border = border "CmpDocBorder",
     },
   },
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lsp' },
-    -- { name = 'vsnip' }, -- For vsnip users.
-    -- { name = 'luasnip' }, -- For luasnip users.
-    -- { name = 'ultisnips' }, -- For ultisnips users.
-    -- { name = 'snippy' }, -- For snippy users.
-  }, {
-    { name = 'buffer' },
-  })
 })
-
-
--- Set configuration for specific filetype.
-cmp.setup.filetype('gitcommit', {
-  sources = cmp.config.sources({
-    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-  }, {
-    { name = 'buffer' },
-  })
-})
-
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' }
-  }
-})
-
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
-})
-
--- Setup lspconfig.
--- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
--- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
--- capabilities = capabilities
--- }

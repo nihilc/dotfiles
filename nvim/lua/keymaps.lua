@@ -8,6 +8,7 @@ local opts = { noremap=true, silent=true }
 g.mapleader = ' '
 -- Control s to save
 map('n', '<C-s>', ':w<cr>', opts)
+map('i', '<C-s>', '<Esc>:w<cr>', opts)
 -- Manage buffers
 map('n', '<Tab>', ':bnext<cr>', opts)
 map('n', '<S-Tab>', ':bprevious<cr>', opts)
