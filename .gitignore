@@ -17,7 +17,7 @@ pavucontrol.ini
 mimeapps.list
 QtProject.conf
 
-nvim
+nvim/plugin
 nvim-old
 lvim
 Code
