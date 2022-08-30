@@ -54,6 +54,8 @@ packer.startup({
         'L3MON4D3/LuaSnip'
       }
     }
+    -- Emmet
+    use 'mattn/emmet-vim'
 
     ---- Git ----
     -- gitsings

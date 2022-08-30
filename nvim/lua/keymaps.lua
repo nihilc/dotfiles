@@ -27,6 +27,8 @@ map('n', '<C-l>', '<C-w>l', opts)
 -- Clear highlight search
 map('n', '<Esc>', '<cmd>nohlsearch<cr>', opts)
 
+-- Emmet
+g.user_emmet_leader_key='<M-m>'
 
 ---- Telescope
 -- find
