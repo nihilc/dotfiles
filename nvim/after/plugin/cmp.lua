@@ -1,11 +1,5 @@
-local has_words_before = function()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
-
 local cmp = require('cmp')
 local lspkind = require("lspkind")
-local luasnip = require("luasnip")
 
 -- Change borders of menu
 local function border(hl_name)
@@ -44,35 +38,7 @@ cmp.setup({
       keyword_length = 4 },
   }),
 
-  mapping = {
-    ["<C-d>"] = require('cmp').mapping.scroll_docs(-4),
-    ["<C-f>"] = require('cmp').mapping.scroll_docs(4),
-    ["<C-e>"] = require('cmp').mapping.abort(),
-    ['<C-y>'] = require('cmp').mapping.confirm({ select = true }),
-    ["<c-space>"] = require('cmp').mapping.complete(),
-
-    ["<C-n>"] = require('cmp').mapping(function(fallback)
-      if require('cmp').visible() then
-        require('cmp').select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      elseif has_words_before() then
-        require('cmp').complete()
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-
-    ["<C-p>"] = require('cmp').mapping(function(fallback)
-      if require('cmp').visible() then
-        require('cmp').select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-  },
+  mapping = cmp_keymap(cmp),
 
   formatting = {
     format = lspkind.cmp_format({

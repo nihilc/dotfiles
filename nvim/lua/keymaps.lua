@@ -1,6 +1,6 @@
 local g = vim.g
 local map = vim.keymap.set
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 
 
 ---- General
@@ -15,10 +15,10 @@ map('n', '<S-Tab>', ':bprevious<cr>', opts)
 map('n', '<leader>bc', ':bdelete<cr>', opts)
 map('n', '<leader>bn', ':new<cr>', opts)
 -- Alt h,j,k,l to move (insert mode)
-map('i', '<M-h>', '<left>', opts)
-map('i', '<M-j>', '<down>', opts)
-map('i', '<M-k>', '<up>', opts)
-map('i', '<M-l>', '<right>', opts)
+map('i', '<C-h>', '<left>', opts)
+map('i', '<C-j>', '<down>', opts)
+map('i', '<C-k>', '<up>', opts)
+map('i', '<C-l>', '<right>', opts)
 -- Control h,j,k,l to between in windows
 map('n', '<C-h>', '<C-w>h', opts)
 map('n', '<C-j>', '<C-w>j', opts)
@@ -28,7 +28,7 @@ map('n', '<C-l>', '<C-w>l', opts)
 map('n', '<Esc>', '<cmd>nohlsearch<cr>', opts)
 
 -- Emmet
-g.user_emmet_leader_key='<M-m>'
+g.user_emmet_leader_key = '<M-m>'
 
 ---- Telescope
 -- find
@@ -58,7 +58,7 @@ function lsp_keymap(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
   vim.opt_local.signcolumn = 'yes'
 
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
   local telescope = require('telescope.builtin')
 
   map('n', 'gd', telescope.lsp_definitions, bufopts)
@@ -77,16 +77,41 @@ function lsp_keymap(client, bufnr)
   map('n', '<leader>af', vim.lsp.buf.formatting, bufopts)
 end
 
-
 -- Cmp
--- function cmp_keymap(cmp)
---   return {
---     ['<C-n>'] = cmp.mapping.select_next_item(),
---     ['<C-p>'] = cmp.mapping.select_prev_item(),
---     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
---     ['<C-u>'] = cmp.mapping.scroll_docs(4),
---     ['<C-Space>'] = cmp.mapping.complete(),
---     ['<C-e>'] = cmp.mapping.close(),
---     ['<CR>'] = cmp.mapping.confirm({ select = true })
---   }
--- end
+function cmp_keymap(cmp)
+  local has_words_before = function()
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+  end
+  local luasnip = require("luasnip")
+
+  return {
+    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+    ["<c-space>"] = cmp.mapping.complete(),
+    ["<C-e>"] = cmp.mapping.abort(),
+    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-u>"] = cmp.mapping.scroll_docs(4),
+
+    ["<C-n>"] = require('cmp').mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      elseif has_words_before() then
+        cmp.complete()
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+
+    ["<C-p>"] = require('cmp').mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+  }
+end
