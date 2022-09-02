@@ -54,6 +54,12 @@ packer.startup({
         'L3MON4D3/LuaSnip'
       }
     }
+
+    -- Control
+    use {
+      'tpope/vim-surround',
+      'tpope/vim-repeat'
+    }
     -- Emmet
     use 'mattn/emmet-vim'
 

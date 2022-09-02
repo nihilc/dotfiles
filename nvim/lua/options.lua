@@ -34,4 +34,4 @@ o.scrolloff       = 4     -- Add lines above and below the cursor
 o.splitbelow      = true  -- Horizontal split to the bottom
 o.splitright      = true  -- Vertical split to the right 
 o.pumheight       = 15    -- Menu height
-o.completeopt     = 'menuone,noselect,noinsert'
+o.completeopt     = 'menu,menuone,noselect,noinsert'
