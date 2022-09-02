@@ -11,6 +11,9 @@ super + {alt,shift} + Return
 # ranger
 super + {f,v}
   bspc rule -a Alacritty -o state=floating & alacritty -e {ranger, nvim}
+# Fast open ScreenShots
+super + shift + f
+  bspc rule -a Alacritty -o desktop=8 & alacritty -e ranger ~/Pictures/ScreenShots/
 # htop
 super + shift + Escape
   alacritty -e htop
