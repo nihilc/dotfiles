@@ -72,9 +72,9 @@ function lsp_keymap(client, bufnr)
   map('n', '<leader>lS', telescope.lsp_workspace_symbols, bufopts)
   map('n', '<leader>ll', telescope.diagnostics, bufopts)
 
-  map('n', '<leader>aa', vim.lsp.buf.code_action, bufopts)
-  map('n', '<leader>an', vim.lsp.buf.rename, bufopts)
-  map('n', '<leader>af', vim.lsp.buf.formatting, bufopts)
+  map('n', '<leader>la', vim.lsp.buf.code_action, bufopts)
+  map('n', '<leader>ln', vim.lsp.buf.rename, bufopts)
+  map('n', '<leader>lf', vim.lsp.buf.formatting, bufopts)
 end
 
 -- Cmp

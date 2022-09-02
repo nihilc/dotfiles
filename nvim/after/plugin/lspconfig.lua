@@ -30,24 +30,27 @@ local handlers = {
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 ---- Setup servers
+local servers = {
+  'clangd',       -- C, C++
+  'pyright',      -- Python
+  'bashls',       -- Bash
+  'intelephense', -- Php
+  'cssls',        -- Css
+}
+for _, lsp in ipairs(servers) do
+  require('lspconfig')[lsp].setup {
+    on_attach = lsp_keymap,
+    capabilities = capabilities,
+    handlers = handlers,
+  }
+end
+---- With some Specifications
 -- Html
 lspconfig.html.setup {
   on_attach = lsp_keymap,
   capabilities = capabilities,
   handlers = handlers,
   filetypes = { 'html', 'php' }
-}
--- Css
-lspconfig.cssls.setup {
-  on_attach = lsp_keymap,
-  capabilities = capabilities,
-  handlers = handlers,
-}
--- Php
-lspconfig.intelephense.setup {
-  on_attach = lsp_keymap,
-  capabilities = capabilities,
-  handlers = handlers,
 }
 -- Lua
 lspconfig.sumneko_lua.setup {
@@ -62,10 +65,4 @@ lspconfig.sumneko_lua.setup {
       telemetry = { enable = false },
     },
   },
-}
--- C and C++
-lspconfig.clangd.setup {
-  on_attach = lsp_keymap,
-  capabilities = capabilities,
-  handlers = handlers,
 }
