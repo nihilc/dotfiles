@@ -39,6 +39,7 @@ map('n', '<leader>fb', ':Telescope buffers<cr>', opts)
 -- help
 map('n', '<leader>th', ':Telescope help_tags<cr>', opts)
 map('n', '<leader>tk', ':Telescope keymaps<cr>', opts)
+map('n', '<leader>tt', ':Telescope colorscheme<cr>', opts)
 -- git
 map('n', '<leader>gt', ':Telescope git_status<cr>', opts)
 map('n', '<leader>gc', ':Telescope git_commits<cr>', opts)

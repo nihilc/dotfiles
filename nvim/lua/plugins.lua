@@ -7,7 +7,7 @@ packer.startup({
 
     ---- UI ----
     -- Theme
-    use 'folke/tokyonight.nvim'
+    use "RRethy/nvim-base16"
     -- Lualine
     use 'nvim-lualine/lualine.nvim'
     -- bufferline
