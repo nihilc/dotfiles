@@ -1,5 +1,5 @@
 -- Theme
-vim.cmd[[colorscheme base16-da-one-sea]]
+vim.cmd[[colorscheme base16-ocean]]
 
 -- Nvim-tree
 require('nvim-tree').setup()
