@@ -78,7 +78,9 @@ Copy or link the tmux folder
 
 ```bash
 cp -r ./config/tmux ~/.config/tmux
-# or
+```
+
+```bash
 ln -s "$(realpath ./config/tmux)" ~/.config/tmux
 ```
 
@@ -102,7 +104,9 @@ Copy or Link the configuration files
 
 ```bash
 cp -r ./config/git ~/.config/git
-#or
+```
+
+```bash
 ln -s "$(realpath ./config/git)" ~/.config/git
 ```
 
