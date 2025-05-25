@@ -59,7 +59,9 @@ Copy or Link the configuration files
 cp ./config/zshrc ~/.zshrc
 cp ./config/profile ~/.profile
 cp ./config/starship.toml ~/.config/starship.toml
-#or
+```
+
+```bash
 ln -s "$(realpath ./config/zshrc)" ~/.zshrc
 ln -s "$(realpath ./config/profile)" ~/.profile
 ln -s "$(realpath ./config/starship.toml)" ~/.config/starship.toml
