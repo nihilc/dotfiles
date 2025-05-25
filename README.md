@@ -69,3 +69,18 @@ cp -r ./config/git ~/.config/git
 ln -s "$(realpath ./config/git)" ~/.config/git
 ```
 
+### Others
+
+- htop
+
+**Usage**
+
+Copy or Link the configuration files
+
+```bash
+cp -r ./config/htop ~/.config/htop
+```
+
+```bash
+ln -s "$(realpath ./config/htop)" ~/.config/
+```
