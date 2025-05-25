@@ -1,5 +1,42 @@
 # My dotfiles
 
+## Usage
+
+Clone the repository
+
+```bash
+git clone https://github.com/nihilc/dotfiles
+cd dotfiles
+```
+
+Copy or Link the config files to their respective location
+
+```bash
+cp ./config/zshrc ~/.zshrc
+cp ./config/profile ~/.profile
+cp ./config/starship.toml ~/.config/starship.toml
+cp -r ./config/tmux ~/.config/tmux
+cp -r ./config/git ~/.config/git
+cp -r ./config/htop ~/.config/htop
+```
+
+```bash
+ln -s "$(realpath ./config/zshrc)" ~/.zshrc
+ln -s "$(realpath ./config/profile)" ~/.profile
+ln -s "$(realpath ./config/starship.toml)" ~/.config/starship.toml
+ln -s "$(realpath ./config/tmux)" ~/.config/tmux
+ln -s "$(realpath ./config/git)" ~/.config/git
+ln -s "$(realpath ./config/htop)" ~/.config/
+```
+
+For tmux you need to install [tpm](https://github.com/tpm/tpm)
+
+```bash
+git clone https://github.com/tmux-plugins/tpm.git ~/.config/tmux/plugins/tpm
+```
+
+Finally open tmux and install the plugins with `prefix` + `I` (capital i)
+
 ## Configs
 
 ### Zsh
