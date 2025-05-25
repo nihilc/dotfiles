@@ -53,3 +53,19 @@ git clone https://github.com/tmux-plugins/tpm.git ~/.config/tmux/plugins/tpm
 
 Finally open tmux and install the plugins with `prefix` + `I` (capital i)
 
+### Git
+
+Just some basic config, aliases and custom log
+
+![git screenshot](./assets/git_screenshot.png)
+
+**Usage**
+
+Copy or Link the configuration files
+
+```bash
+cp -r ./config/git ~/.config/git
+#or
+ln -s "$(realpath ./config/git)" ~/.config/git
+```
+

@@ -1,0 +1,22 @@
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
+[user]
+	name = Christian Cardenas
+	email = nihilist.cc@gmail.com
+[alias]
+	s = status
+	ss = status -s
+	c = commit
+	ca = commit --amend
+	a = add
+	l = log --all --graph --pretty=format:'%C(magenta)%h %C(blue)%ad %C(cyan)[%an] %C(auto) %D%n%s%n'
+[url "https://github.com/"] insteadOf = "github:"
+[url "git@github.com:nihilc/"] insteadOf = "nihilc:"
+[advice]
+  statusHints = false
+  rmHints = false
+[log]
+  abbrevCommit = true
+  date=format:%Y/%m/%d %H:%M
