@@ -28,3 +28,28 @@ ln -s "$(realpath ./config/profile)" ~/.profile
 ln -s "$(realpath ./config/starship.toml)" ~/.config/starship.toml
 ```
 
+### Tmux
+
+It's a simple config the most important changes are the [bindings](./config/tmux/KEYMAPS.md), and I use my own [theme](https://github.com/nihilc/tmux.theme)
+
+![tmux screenshot](./assets/tmux_screenshot_1.png)
+![tmux screenshot](./assets/tmux_screenshot_2.png)
+
+**Usage**
+
+Copy or link the tmux folder
+
+```bash
+cp -r ./config/tmux ~/.config/tmux
+# or
+ln -s "$(realpath ./config/tmux)" ~/.config/tmux
+```
+
+Then install [tpm](https://github.com/tpm/tpm)
+
+```bash
+git clone https://github.com/tmux-plugins/tpm.git ~/.config/tmux/plugins/tpm
+```
+
+Finally open tmux and install the plugins with `prefix` + `I` (capital i)
+
