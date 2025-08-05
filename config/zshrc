@@ -54,7 +54,13 @@ alias rm="rm -i"
 alias du="du -h"
 alias ssh-github='pkill ssh-agent; eval $(ssh-agent); ssh-add ~/.ssh/github'
 alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
-
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 
 # Autocmd
 eval "$(fzf --zsh)"
