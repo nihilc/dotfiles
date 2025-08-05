@@ -6,6 +6,7 @@ config.font_size = 12
 config.color_scheme = "Kanagawa (Gogh)" -- "OneDark (base16)" "catppuccin-mocha"
 
 config.window_decorations = "NONE"
+config.window_background_opacity = 0.90
 config.enable_tab_bar = false
 
 config.disable_default_key_bindings = true
