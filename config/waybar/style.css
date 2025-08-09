@@ -55,18 +55,18 @@ window#waybar {
 /* left */
 #workspaces {
   padding: 2px 4px;
-  border-color: @color_05;
+  border-color: @color_06;
 }
 #workspaces button {
-  color: @color_05;
+  color: @color_06;
 }
 #workspaces button.urgent {
   color: @color_02;
 }
 
 #window {
-  border-color: @color_07;
-  color: @color_07;
+  border-color: @color_05;
+  color: @color_05;
 }
 window#waybar.empty #window {
   background: transparent;
