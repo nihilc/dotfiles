@@ -1,13 +1,6 @@
 /* Theme */
-@define-color bg0 #1F1F28;
-@define-color bg1 #2A2A37;
-@define-color bg2 #363646;
-@define-color bg3 #54546D;
-
-@define-color fg3 #938AA9;
-@define-color fg2 #727169;
-@define-color fg1 #C8C093;
-@define-color fg0 #DCD7BA;
+@define-color bg #1F1F28;
+@define-color fg #DCD7BA;
 
 @define-color color_01 #090618;
 @define-color color_02 #C34043;
@@ -29,7 +22,7 @@
 /* General */
 * {
   font-size: 16px;
-  font-family: Roboto, Helvetica, "JetbrainsMono Nerd Font Propo";
+  font-family: Noto Sans, "JetbrainsMono Nerd Font Propo";
   margin: 0px;
   padding: 0px 2px;
   border: none;
@@ -38,7 +31,7 @@
 }
 window#waybar {
   background: transparent;
-  color: @fg0;
+  color: @fg;
 }
 
 /* Modules */
@@ -54,9 +47,9 @@ window#waybar {
 #custom-power {
   min-width: 20px;
   padding: 2px 8px;
-  color: @fg0;
-  background: @bg0;
-  border: 1px solid @fg0;
+  color: @fg;
+  background: @bg;
+  border: 1px solid @fg;
 }
 
 /* left */
@@ -91,8 +84,8 @@ window#waybar.empty #window {
 }
 
 #clock {
-  border-color: @fg1;
-  color: @fg1;
+  border-color: @color_08;
+  color: @color_08;
 }
 
 #power-profiles-daemon.balanced {
@@ -130,8 +123,8 @@ window#waybar.empty #window {
 #system {
   padding: 0px;
   margin: 0px;
-  color: @fg0;
-  background: @bg1;
+  color: @fg;
+  background: @bg;
 }
 #network,
 #cpu,
