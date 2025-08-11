@@ -2,5 +2,6 @@
 
 waybar &
 swww-daemon & swww img ~/Pictures/wallpaper
+swaync &
 nm-applet &
 gammastep &
