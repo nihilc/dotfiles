@@ -13,6 +13,12 @@
     "clock"
   ],
   "modules-right": [
+    "hyprland/language",
     "tray"
-  ]
+  ],
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "US",
+    "format-es": "ES"
+  }
 }
