@@ -1,160 +1,18 @@
 // -*- mode: jsonc -*-
 {
-  // "layer": "top", // Waybar at top layer
-  "position": "top", // Waybar position (top|bottom|left|right)
-  "height": 24, // Waybar height (to be removed for auto height)
+  // "position": "top", // Waybar position (top|bottom|left|right)
   // "width": 1904, // Waybar width
-  "margin": "8pt 4px 0px 4px",
-  "spacing": 8, // Gaps between modules (4px)
-  // Choose the order of the modules
+  // "height": 24, // Waybar height
+  "margin": "8 8 0 8",
+  "spacing": 4, // Gaps between modules
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/window"
   ],
   "modules-center": [
-    "idle_inhibitor",
-    "clock",
-    "power-profiles-daemon"
+    "clock"
   ],
   "modules-right": [
-    "tray",
-    "custom/language",
-    "pulseaudio",
-    "group/system",
-    "custom/power"
-  ],
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "active": "󱓻",
-      "default": "󱓼",
-      "urgent": "󱓻"
-    }
-  },
-  "hyprland/window": {
-    "format": "{class}",
-    "rewrite": {
-      ".*firefox": "Firefox",
-      ".*wezterm": "Wezterm",
-      ".*obsproject.*": "OBS",
-      ".*dolphin": "Dolphin"
-    },
-    "icon": false,
-    "icon-size": 16,
-    "separate-outputs": true
-  },
-  "clock": {
-    "format": "{:%a %d - %H:%m}",
-    "tooltip-format": "<tt><small>{calendar}</small></tt>"
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    }
-  },
-  "tray": {
-    "icon-size": 18,
-    "spacing": 4
-    // "icons": {
-    //   "blueman": "bluetooth",
-    //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-    // }
-  },
-  "custom/language": {
-    "format": " {}",
-    "exec": "bash ~/.config/waybar/scripts/keymap.sh",
-    "on-click": "hyprctl switchxkblayout sino-wealth-gaming-kb- next",
-    "interval": 1
-  },
-  "pulseaudio": {
-    "format": "{icon} {volume}  {format_source}",
-    "format-muted": "<span foreground='#727169'> {volume}</span>  {format_source}",
-    "format-source": " {volume}",
-    "format-source-muted": "<span foreground='#727169'> {volume}</span>",
-    "format-icons": {
-      "headphone": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
-    },
-    "scroll-step": 5,
-    "on-click-middle": "wezterm -e --class=pavucontrol pulsemixer",
-    "on-click": "pulsemixer --toggle-mute",
-    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-    "input": true
-  },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "󰗑",
-      "power-saver": ""
-    }
-  },
-  "group/system": {
-    "orientation": "horizontal",
-    "drawer": {
-      "transition-duration": 500,
-      "transition-left-to-right": false,
-      "click-to-reveal": true,
-      "children-class": "system-child"
-    },
-    "modules": [
-      "custom/system-wrap",
-      "network",
-      "cpu",
-      "memory",
-      "battery"
-    ]
-  },
-  "custom/system-wrap": {
-    "format": "󰌢"
-  },
-  "cpu": {
-    "format": " {usage}%",
-    "interval": 5
-  },
-  "memory": {
-    "format": " {percentage}%",
-    "tooltip-format": "{used} / {total} GiB used",
-    "interval": 5
-  },
-  "battery": {
-    // "bat": "BAT",
-    "interval": 60,
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{icon} {capacity}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "max-length": 25
-  },
-  "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": "󰖩 {essid} ({signalStrength}%)",
-    "format-ethernet": "󰈀 {ifname}",
-    "format-disconnected": "󱘖 Disconnected",
-    "format-alt": "󰶹 {bandwidthDownBits} - 󰶼 {bandwidthUpBits}",
-    "tooltip-format": "{gwaddr}",
-    "interval": 5
-  },
-  "custom/power": {
-    "format": "⏻",
-    "tooltip": false,
-    "on-click": "hyprlock"
-  }
+    "tray"
+  ]
 }
