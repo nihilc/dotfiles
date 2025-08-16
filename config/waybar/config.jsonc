@@ -1,10 +1,9 @@
-// -*- mode: jsonc -*-
 {
   // "position": "top", // Waybar position (top|bottom|left|right)
   // "width": 1904, // Waybar width
-  // "height": 24, // Waybar height
+  "height": 32, // Waybar height
   "margin": "8 8 0 8",
-  "spacing": 4, // Gaps between modules
+  "spacing": 8, // Gaps between modules
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/window"
@@ -13,12 +12,179 @@
     "clock"
   ],
   "modules-right": [
+    "mpris",
+    "pulseaudio",
+    "pulseaudio#mic",
     "hyprland/language",
-    "tray"
+    "cpu",
+    "memory",
+    "battery",
+    "disk",
+    "tray",
+    "idle_inhibitor",
+    "power-profiles-daemon",
+    "custom/power",
+    "custom/swaync"
   ],
+  "hyprland/workspaces": {
+    "format": "{}"
+  },
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 40,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "Firefox - $1"
+    }
+  },
   "hyprland/language": {
-    "format": "{}",
+    "format": "󰌌 {}",
     "format-en": "US",
-    "format-es": "ES"
+    "format-es": "ES",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%a %d %b %Y}",
+    // TODO: remplace calendar with anything else
+    "tooltip": true,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months": "󰃭 <b>{}</b>",
+        "weekdays": "<u><i>{}</i></u>",
+        "days": "{}",
+        "today": "<span background='pink' foreground='black'>{}</span>"
+      }
+    }
+  },
+  "mpris": {
+    "player": "YoutubeMusic",
+    "format": "󰐌 {title} - {artist}",
+    "format-paused": "󰏥 {title} - {artist}",
+    "tooltip-format": "{title}\n{artist}\n{length}",
+    "on-click": "playerctl --player=YoutubeMusic play-pause",
+    "title-len": 30,
+    "artist-len": 20
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}",
+    "format-muted": "{icon} {volume}",
+    "format-icons": {
+      "headphone": "󰋋",
+      "headphone-muted": "󰋐",
+      "default": "󰕾",
+      "default-muted": "󰖁"
+    },
+    "tooltip": true,
+    "tooltip-format": "{desc}",
+    "on-click": "pavucontrol",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+    "scroll-step": 5
+  },
+  "pulseaudio#mic": {
+    "format": "{format_source}",
+    "format-source": "󰍬 {volume}",
+    "format-source-muted": "<span foreground='blue'>󰍭 {volume}</span>",
+    "tooltip": true,
+    "tooltip-format": "{source_desc}",
+    "on-click": "pavucontrol --tab=4",
+    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
+    "scroll-step": 5
+  },
+  "cpu": {
+    "format": "{icon} {usage}%",
+    "format-icons": [
+      "󰾆",
+      "󰾅",
+      "󰓅"
+    ],
+    "interval": 15
+  },
+  "memory": {
+    "format": "󰘚 {percentage}%",
+    "interval": 15
+  },
+  "battery": {
+    "bat": "BAT0",
+    "adapter": "BAT0",
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-alt": "{timeTo}",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "interval": 60,
+    "states": {
+      "good": 90,
+      "warning": 30,
+      "critical": 15
+    }
+  },
+  "disk": {
+    "format": "󰋊 {free}",
+    "interval": 60
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 4
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰈈",
+      "deactivated": "󰈉"
+    },
+    "tooltip-format-activated": "Sleep prevention: {status}",
+    "tooltip-format-deactivated": "Sleep prevention: {status}"
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "󰉁",
+      "performance": "󰉁",
+      "balanced": "󰗑",
+      "power-saver": "󰌪"
+    }
+  },
+  "custom/power": {
+    "format": "󰈆",
+    "tooltip-format": "Exit"
+  },
+  "custom/swaync": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󰂚",
+      "none": "󰂜",
+      "dnd-notification": "󰂛",
+      "dnd-none": "󰪑",
+      "inhibited-notification": "󰂚",
+      "inhibited-none": "󰂜",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   }
 }

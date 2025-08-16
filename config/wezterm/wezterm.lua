@@ -9,6 +9,10 @@ config.window_decorations = "NONE"
 config.window_background_opacity = 0.90
 config.enable_tab_bar = false
 
+wezterm.on('format-window-title', function(tab, pane, tabs, panes, config)
+  return "Wezterm - " .. pane.title
+end)
+
 config.disable_default_key_bindings = true
 config.keys = {
   { key = 'c', mods = 'CTRL|SHIFT', action = wezterm.action.CopyTo('Clipboard') },
