@@ -3,35 +3,81 @@
   // "width": 1904, // Waybar width
   "height": 32, // Waybar height
   "margin": "8 8 0 8",
-  "spacing": 8, // Gaps between modules
+  "spacing": 4, // Gaps between modules
   "modules-left": [
-    "hyprland/workspaces",
-    "hyprland/window"
+    "group/hyprland"
   ],
-  "modules-center": [
-    "clock"
-  ],
+  "modules-center": ["clock"],
   "modules-right": [
-    "mpris",
-    "pulseaudio",
-    "pulseaudio#mic",
+    "group/audio",
     "hyprland/language",
-    "cpu",
-    "memory",
-    "battery",
-    "disk",
-    "tray",
-    "idle_inhibitor",
-    "power-profiles-daemon",
-    "custom/power",
+    "group/system",
+    "group/power",
     "custom/swaync"
   ],
+  // ********************
+  // Groups
+  // ********************
+  "group/hyprland": {
+    "orientation": "horizontal",
+    "modules": [
+      "hyprland/workspaces",
+      "hyprland/window"
+    ]
+  },
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": [
+      "mpris",
+      "pulseaudio",
+      "pulseaudio#mic"
+    ]
+  },
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": [
+      "group/info",
+      "tray"
+    ]
+  },
+  "group/info": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/info-wrap",
+      "disk",
+      "cpu",
+      "memory",
+      "battery"
+    ],
+    "drawer": {
+      "click-to-reveal": true,
+      "transition-left-to-right": false
+    }
+  },
+  "group/power": {
+    "orientation": "horizontal",
+    "modules": [
+      "idle_inhibitor",
+      "power-profiles-daemon",
+      "custom/power"
+    ]
+  },
+  "custom/info-wrap": {
+    "format": "󰅁",
+    "tooltip": false
+  },
+  // ********************
+  // Modules
+  // ********************
   "hyprland/workspaces": {
-    "format": "{}"
+    "format": "{icon}",
+    "format-icons": {
+      "default": "", // 󱓼
+      "active": "" // 󱓻
+    }
   },
   "hyprland/window": {
     "format": "{title}",
-    "max-length": 40,
     "rewrite": {
       "(.*) — Mozilla Firefox": "Firefox - $1"
     }
@@ -69,7 +115,7 @@
   },
   "pulseaudio": {
     "format": "{icon} {volume}",
-    "format-muted": "{icon} {volume}",
+    "format-muted": "<span foreground='#727169'>{icon} {volume}</span>",
     "format-icons": {
       "headphone": "󰋋",
       "headphone-muted": "󰋐",
@@ -78,8 +124,8 @@
     },
     "tooltip": true,
     "tooltip-format": "{desc}",
-    "on-click": "pavucontrol",
-    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-right": "pavucontrol --tab=3",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
     "scroll-step": 5
@@ -87,11 +133,11 @@
   "pulseaudio#mic": {
     "format": "{format_source}",
     "format-source": "󰍬 {volume}",
-    "format-source-muted": "<span foreground='blue'>󰍭 {volume}</span>",
+    "format-source-muted": "<span foreground='#727169'>󰍭 {volume}</span>",
     "tooltip": true,
     "tooltip-format": "{source_desc}",
-    "on-click": "pavucontrol --tab=4",
-    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-right": "pavucontrol --tab=4",
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
     "scroll-step": 5
