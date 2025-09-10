@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 waybar &
-swww-daemon & swww img ~/Pictures/wallpaper
+swww-daemon & swww img --transition-type=grow --transition-pos=top ~/Pictures/wallpaper
 swaync &
 nm-applet &
 gammastep &

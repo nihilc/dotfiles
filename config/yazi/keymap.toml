@@ -1,0 +1,4 @@
+[mgr]
+append_keymap = [
+	{ on = "<C-w>", run = "shell \"swww img --transition-type=grow --transition-pos=top $0\"", desc = "Set wallpaper" },
+]
