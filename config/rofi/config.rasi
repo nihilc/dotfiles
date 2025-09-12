@@ -1,0 +1,14 @@
+configuration {
+	modes: "drun,window";
+	show-icons: true;
+/*	icon-theme: ;*/
+  terminal: "kitty";
+	max-history-size: 10;
+	disable-history: false;
+	sidebar-mode: true;
+	display-drun: "app";
+	display-window: "win";
+	display-clipboard: "clip";
+}
+
+@theme "./theme.rasi"

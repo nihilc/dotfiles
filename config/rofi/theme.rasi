@@ -1,0 +1,82 @@
+* {
+  font: "Roboto Regular 16";
+  bg0: #1F1F28;
+  bg1: #2A2A37;
+  bg2: #363646;
+  bg3: #54546d;
+
+  fg0: #DCD7BA;
+  fg1: #C8C093;
+
+  accent-color-1: #7E9CD8;
+  accent-color-2: #957FB8;
+
+  text-color:         @fg0;
+  background-color:   transparent;
+
+  margin:  0;
+  padding: 0;
+  spacing: 0;
+
+  border:  0;
+  border-radius: 4px;
+  border-color: @bg3;
+}
+
+window {
+  width: 360px;
+  anchor: center;
+  location: center;
+}
+
+listview {
+  lines: 10;
+}
+
+mainbox {
+  border:2px;
+  background-color: @bg0;
+  children: [inputbar, message, listview, mode-switcher];
+}
+
+inputbar{
+  children: [prompt, entry];
+}
+
+// Geometry
+inputbar, message{
+  padding: 6px 8px;
+  border: 0 0 2px 0;
+}
+mode-switcher{
+  border: 2px 0 0 0;
+}
+button, element{
+  padding: 6px ;
+}
+element-icon, prompt {
+  padding: 0 8px 0 0;
+}
+element-icon {
+  size: 1em;
+}
+
+// Colors / Decorations
+inputbar, mode-switcher, message{
+  border-radius: 0;
+  background-color: @bg1;
+}
+button {
+  text-color: @accent-color-2;
+}
+button selected {
+  border-radius: 0;
+  background-color: @accent-color-2;
+  text-color: @bg1;
+}
+element selected {
+  background-color: @bg2;
+}
+element-text selected {
+  text-color: @accent-color-1;
+}
