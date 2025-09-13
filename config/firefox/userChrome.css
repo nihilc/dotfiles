@@ -1,0 +1,33 @@
+/* remove white border in tab groups closed */
+.tab-group-label {
+  tab-group[collapsed] > .tab-group-label-container > & {
+    outline: 0px solid light-dark(var(--tab-group-color), rgba(0, 0, 0, 0.3)) !important;
+  }
+}
+
+/* expand tab groups label */
+.tab-group-label {
+  #tabbrowser-tabs[orient="vertical"][expanded] & {
+    width: 100%;
+  }
+}
+
+/* fix tab group spacing between tabs*/
+#tabbrowser-tabs[orient="vertical"] tab-group[collapsed] + .tabbrowser-tab {
+  padding-block-start: calc(var(--space-small) + 2px) !important;
+}
+
+/* Hide new tab button */
+#tabs-newtab-button {
+    display: none !important;
+}
+/* Hide close tab button */
+.tab-close-button {
+  display: none !important;
+}
+
+/* Hide minimize maximize and close buttons */
+.titlebar-buttonbox-container {
+  display: none;
+}
+
