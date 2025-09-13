@@ -1,15 +1,15 @@
+// General
 * {
-  font: "Roboto Regular 16";
+  font: "Roboto 14";
   bg0: #1F1F28;
   bg1: #2A2A37;
   bg2: #363646;
   bg3: #54546d;
 
-  fg0: #DCD7BA;
-  fg1: #C8C093;
+  fg0: #C8C093;
+  fg1: #DCD7BA;
 
-  accent-color-1: #7E9CD8;
-  accent-color-2: #957FB8;
+  accent-color: #957FB8;
 
   text-color:         @fg0;
   background-color:   transparent;
@@ -19,64 +19,68 @@
   spacing: 0;
 
   border:  0;
-  border-radius: 4px;
+  border-radius: 0;
   border-color: @bg3;
 }
+prompt {
+  font: "Roboto Mono 14";
+}
+listview {
+  lines: 10;
+}
 
+// Layout
+mainbox {
+  children: [inputbar, listview];
+}
+inputbar {
+  children: [entry, prompt];
+}
+
+// Geometry
+mainbox {
+  border: 2px;
+  border-radius: 4px;
+}
 window {
   width: 360px;
   anchor: center;
   location: center;
 }
-
-listview {
-  lines: 10;
-}
-
-mainbox {
-  border:2px;
-  background-color: @bg0;
-  children: [inputbar, message, listview, mode-switcher];
-}
-
-inputbar{
-  children: [prompt, entry];
-}
-
-// Geometry
-inputbar, message{
-  padding: 6px 8px;
+inputbar {
   border: 0 0 2px 0;
 }
-mode-switcher{
-  border: 2px 0 0 0;
+prompt, entry {
+  border-radius: 0;
+  padding: 6px 8px;
 }
-button, element{
+element{
   padding: 6px ;
 }
-element-icon, prompt {
-  padding: 0 8px 0 0;
+element-text {
+  padding: 0 0 0 8px;
 }
 element-icon {
   size: 1em;
 }
 
-// Colors / Decorations
-inputbar, mode-switcher, message{
-  border-radius: 0;
+// Colors
+mainbox {
+  background-color: @bg0;
+}
+inputbar {
   background-color: @bg1;
 }
-button {
-  text-color: @accent-color-2;
+entry {
+  text-color: @fg1;
 }
-button selected {
-  border-radius: 0;
-  background-color: @accent-color-2;
+prompt {
+  background-color: @accent-color;
   text-color: @bg1;
 }
 element selected {
   background-color: @bg2;
 }
 element-text selected {
-  text-color: @accent-color-1;
+  text-color: @fg1;
 }

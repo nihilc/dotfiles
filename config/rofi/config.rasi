@@ -5,10 +5,10 @@ configuration {
   terminal: "kitty";
 	max-history-size: 10;
 	disable-history: false;
-	sidebar-mode: true;
 	display-drun: "app";
 	display-window: "win";
 	display-clipboard: "clip";
+  window-format: "{c}\t{t}";
 }
 
 @theme "./theme.rasi"
