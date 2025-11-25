@@ -7,12 +7,11 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # PATH
-export PATH="$PATH:/usr/local/go/bin" # Golang
-export PATH="$PATH:$HOME/.local/bin" # User's bin
+export PATH="$PATH:$HOME/.local/bin"
 
 # Env
-export EDITOR="$HOME/.local/bin/nvim"
-export SUDO_EDITOR="$HOME/.local/bin/nvim"
+export EDITOR="$(which nvim)"
+export SUDO_EDITOR="$(which nvim)"
 
 # XDG Env
 export XDG_DATA_HOME="$HOME/.local/share"
