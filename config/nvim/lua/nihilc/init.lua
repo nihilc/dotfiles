@@ -23,7 +23,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = "nihilc.plugins",
   install = {
-    colorscheme = { "habamax" },
+    colorscheme = { "kanagawa", "habamax" },
   },
   ui = {
     border = "single",

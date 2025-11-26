@@ -4,8 +4,67 @@ return {
   -- Appearance
   { "nvim-mini/mini.icons", version = "*", opts = {} },
   { "nvim-mini/mini.indentscope", version = "*", opts = { symbol = "│" } },
+  {
+    "nvim-mini/mini.starter",
+    version = "*",
+    config = function()
+      local starter = require("mini.starter")
+      starter.setup({
+        items = {
+          starter.sections.sessions(5, true),
+          starter.sections.recent_files(4, true),
+          starter.sections.recent_files(4, false),
+          starter.sections.builtin_actions(),
+        },
+        content_hooks = {
+          starter.gen_hook.aligning("center", "center"),
+          starter.gen_hook.adding_bullet(),
+          starter.gen_hook.indexing("all", { "Sessions", "Builtin actions" }),
+        },
+        footer = "Type query to filter items\n<esc> resets query\n<c-c> closes this buffer",
+      })
+    end,
+  },
 
   -- Workflow
+  {"nvim-mini/mini.extra", version = "*", opts = {}},
+  {
+    "nvim-mini/mini.pick",
+    version = "*",
+    config = function()
+      require("mini.pick").setup()
+      -- Change vim.ui.select to MiniPick.ui_select()
+      vim.ui.select = function(items, opts, on_choice)
+        start_opts = { window = { config = { width = 60, height = 10 } } }
+        return MiniPick.ui_select(items, opts, on_choice, start_opts)
+      end
+      -- Set Global Keymaps
+      keymaps.set({
+        { desc = "Find Files", lhs = "<leader>ff", rhs = "<cmd>Pick files<cr>" },
+        { desc = "Find Buffer", lhs = "<leader>fb", rhs = "<cmd>Pick buffers<cr>" },
+        { desc = "Find Grep Live", lhs = "<leader>fg", rhs = "<cmd>Pick grep_live<cr>" },
+        {
+          desc = "Find word",
+          lhs = "<leader>fw",
+          rhs = function()
+            local word = vim.fn.expand("<cword>")
+            MiniPick.builtin.grep({ pattern = word }, { source = { name = string.format("Grep: %s", word) } })
+          end,
+        },
+        {
+          desc = "Find WORD",
+          lhs = "<leader>fW",
+          rhs = function()
+            local word = vim.fn.expand("<cWORD>")
+            MiniPick.builtin.grep({ pattern = word }, { source = { name = string.format("Grep: %s", word) } })
+          end,
+        },
+        { desc = "Help Tags", lhs = "<leader>ht", rhs = "<cmd>Pick help<cr>" },
+        { desc = "Help Keymaps", lhs = "<leader>hk", rhs = "<cmd>Pick keymaps<cr>" },
+        -- { desc = "", lhs = "", rhs = "" },
+      })
+    end,
+  },
   {
     "nvim-mini/mini.files",
     version = "*",
