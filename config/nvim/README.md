@@ -2,6 +2,7 @@
 
 **Workflow**
 - [mini.files](https://nvim-mini.org/mini.nvim/readmes/mini-files) Navigate and manipulate file system
+- [mini.sessions](https://nvim-mini.org/mini.nvim/readmes/mini-sessions)
 
 **Appearance**
 - [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim) ColorScheme
@@ -49,7 +50,7 @@
 ### Plugins
 
 - [mini.files](https://nvim-mini.org/mini.nvim/readmes/mini-files)
-| mode                | keymap       | description                           | Note                                                                                                              |
+| mode                | keymap       | description                           | note                                                                                                              |
 |---------------------|--------------|---------------------------------------|-------------------------------------------------------------------------------------------------------------------|
 | `n`                 | `<leader>e`  | Open mini.files (current file or cwd) |                                                                                                                   |
 | `n`                 | `<leader>E`  | Open mini.files (cwd)                 |                                                                                                                   |
@@ -57,3 +58,9 @@
 | `n` (in mini.files) | `<leader>yy` | Copy to Clipboard                     | requires [wl-clipboard](https://github.com/bugaevc/wl-clipboard)                                                  |
 | `n` (in mini.files) | `<leader>yp` | Copy Path to Clipboard                | requires [wl-clipboard](https://github.com/bugawvc/wl-clipboard)                                                  |
 | `n` (in mini.files) | `<leader>yz` | Zip and Copy to Clipboard             | requires [wl-clipboard](https://github.com/bugawvc/wl-clipboard), [zip](https://archlinux.org/packages/?name=zip) |
+- [mini.sessions](https://nvim-mini.org/mini.nvim/readmes/mini-sessions)
+| mode | keymap       | description    |
+|------|--------------|----------------|
+| `n`  | `<leader>sn` | Session New    |
+| `n`  | `<leader>sr` | Session Read   |
+| `n`  | `<leader>sd` | Session Delete |
