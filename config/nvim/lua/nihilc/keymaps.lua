@@ -7,7 +7,7 @@ local M = {}
 M.set = function(keymaps)
   for _, keymap in pairs(keymaps) do
     local mode = keymap.mode or "n"
-    local opts = keymap.opts or { noremap = true, silent = true, nowait = true }
+    local opts = keymap.opts or { noremap = true, nowait = true }
     opts.desc = keymap.desc
     vim.keymap.set(mode, keymap.lhs, keymap.rhs, opts)
   end
@@ -21,10 +21,10 @@ M.set({
   -- Navigation
   { mode = "n", lhs = "j", rhs = "gj", desc = "Move down" },
   { mode = "n", lhs = "k", rhs = "gk", desc = "Move up" },
-  { mode = "i", lhs = "<c-h>", rhs = "<left>", desc = "Move left" },
-  { mode = "i", lhs = "<c-l>", rhs = "<right>", desc = "Move right" },
-  { mode = "i", lhs = "<c-j>", rhs = "<down>", desc = "Move down" },
-  { mode = "i", lhs = "<c-k>", rhs = "<up>", desc = "Move up" },
+  { mode = { "c", "i" }, lhs = "<c-h>", rhs = "<left>", desc = "Move left" },
+  { mode = { "c", "i" }, lhs = "<c-l>", rhs = "<right>", desc = "Move right" },
+  { mode = { "c", "i" }, lhs = "<c-j>", rhs = "<down>", desc = "Move down" },
+  { mode = { "c", "i" }, lhs = "<c-k>", rhs = "<up>", desc = "Move up" },
   { mode = "n", lhs = "<c-h>", rhs = "<c-w><c-h>", desc = "Move focus to the left window" },
   { mode = "n", lhs = "<c-l>", rhs = "<c-w><c-l>", desc = "Move focus to the right window" },
   { mode = "n", lhs = "<c-j>", rhs = "<c-w><c-j>", desc = "Move focus to the lower window" },
