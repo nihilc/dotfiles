@@ -1,11 +1,14 @@
 # Plugins
 
 **Workflow**
+- [mini.pick](https://nvim-mini.org/mini.nvim/readmes/mini-pick) Pick anything
 - [mini.files](https://nvim-mini.org/mini.nvim/readmes/mini-files) Navigate and manipulate file system
-- [mini.sessions](https://nvim-mini.org/mini.nvim/readmes/mini-sessions)
+- [mini.sessions](https://nvim-mini.org/mini.nvim/readmes/mini-sessions) Session management
+- [mini.extra](https://nvim-mini.org/mini.nvim/readmes/mini-extra) Extra ‘mini.nvim’ functionality
 
 **Appearance**
 - [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim) ColorScheme
+- [mini.starter](https://nvim-mini.org/mini.nvim/readmes/mini-starter) Start screen
 - [mini.icons](https://nvim-mini.org/mini.nvim/readmes/mini-icons) Icon provider
 - [mini.indentscope](https://nvim-mini.org/mini.nvim/readmes/mini-indentscope) Visualize and work with indent scope
 
@@ -49,6 +52,16 @@
 
 ### Plugins
 
+- [mini.pick](https://nvim-mini.org/mini.nvim/readmes/mini-pick)
+| mode | keymap       | description    |
+|------|--------------|----------------|
+| `n`  | `<leader>ff` | Find Files     |
+| `n`  | `<leader>fb` | Find Buffers   |
+| `n`  | `<leader>fg` | Find Grep Live |
+| `n`  | `<leader>fw` | Find Word      |
+| `n`  | `<leader>fW` | Find WORD      |
+| `n`  | `<leader>ht` | Help Tags      |
+| `n`  | `<leader>hk` | Help Keymaps   |
 - [mini.files](https://nvim-mini.org/mini.nvim/readmes/mini-files)
 | mode                | keymap       | description                           | note                                                                                                              |
 |---------------------|--------------|---------------------------------------|-------------------------------------------------------------------------------------------------------------------|

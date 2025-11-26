@@ -2,8 +2,6 @@ local autocmd = require("nihilc.autocmd")
 local keymaps = require("nihilc.keymaps")
 return {
   -- Appearance
-  { "nvim-mini/mini.icons", version = "*", opts = {} },
-  { "nvim-mini/mini.indentscope", version = "*", opts = { symbol = "│" } },
   {
     "nvim-mini/mini.starter",
     version = "*",
@@ -25,6 +23,8 @@ return {
       })
     end,
   },
+  { "nvim-mini/mini.icons", version = "*", opts = {} },
+  { "nvim-mini/mini.indentscope", version = "*", opts = { symbol = "│" } },
 
   -- Workflow
   {"nvim-mini/mini.extra", version = "*", opts = {}},
@@ -44,7 +44,7 @@ return {
         { desc = "Find Buffer", lhs = "<leader>fb", rhs = "<cmd>Pick buffers<cr>" },
         { desc = "Find Grep Live", lhs = "<leader>fg", rhs = "<cmd>Pick grep_live<cr>" },
         {
-          desc = "Find word",
+          desc = "Find Word",
           lhs = "<leader>fw",
           rhs = function()
             local word = vim.fn.expand("<cword>")
