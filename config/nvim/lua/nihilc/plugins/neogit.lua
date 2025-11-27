@@ -6,7 +6,7 @@ return {
     "nvim-mini/mini.pick",
   },
   config = function()
-    local neogit = require('neogit')
+    local neogit = require("neogit")
     local keymaps = require("nihilc.keymaps")
     local autocmd = require("nihilc.autocmd")
     neogit.setup({
@@ -17,7 +17,7 @@ return {
       },
     })
     keymaps.set({
-      { desc = "Git Open", lhs = "<leader>gg", rhs = neogit.open }
+      { desc = "Git Open", lhs = "<leader>gg", rhs = neogit.open },
     })
-  end
+  end,
 }

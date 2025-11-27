@@ -1,7 +1,7 @@
 return {
   "nvim-mini/mini.pick",
   dependencies = {
-    {"nvim-mini/mini.extra", version = "*", opts = {}},
+    { "nvim-mini/mini.extra", version = "*", opts = {} },
   },
   version = "*",
   config = function()
