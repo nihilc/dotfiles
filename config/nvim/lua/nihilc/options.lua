@@ -17,6 +17,7 @@ vim.o.undofile = true -- Save undo file
 vim.o.undolevels = 10000 -- number of changes to undo
 vim.o.timeout = true -- wait for a mapped sequence
 vim.o.timeoutlen = 500 -- time to wait for a mapped sequence to complete.
+vim.o.winborder = "single" -- default border for floating windows
 -- Status line
 vim.o.laststatus = 3 -- always show status line and only one
 vim.o.ruler = true -- show line and column number of cursor
