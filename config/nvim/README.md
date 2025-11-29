@@ -7,19 +7,20 @@
 
 ## Plugins
 
-**Workflow**
+- [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim) ColorScheme
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) A completion engine plugin for neovim written in Lua
+    - [luasnip](https://github.com/L3MON4D3/LuaSnip) Snippet Engine for Neovim written in Lua.
+    - [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) Set of preconfigured snippets for different languages.
 - [neogit](https://github.com/NeogitOrg/neogit) An interactive and powerful Git interface
 - [gitsigns](https://github.com/lewis6991/gitsigns.nvim) Git integration for buffers
-- [mini.pick](https://nvim-mini.org/mini.nvim/readmes/mini-pick) Pick anything
-- [mini.files](https://nvim-mini.org/mini.nvim/readmes/mini-files) Navigate and manipulate file system
-- [mini.sessions](https://nvim-mini.org/mini.nvim/readmes/mini-sessions) Session management
-- [mini.extra](https://nvim-mini.org/mini.nvim/readmes/mini-extra) Extra ‘mini.nvim’ functionality
-
-**Appearance**
-- [kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim) ColorScheme
-- [mini.starter](https://nvim-mini.org/mini.nvim/readmes/mini-starter) Start screen
-- [mini.icons](https://nvim-mini.org/mini.nvim/readmes/mini-icons) Icon provider
-- [mini.indentscope](https://nvim-mini.org/mini.nvim/readmes/mini-indentscope) Visualize and work with indent scope
+- [mini.nvim](https://github.com/nvim-mini/mini.nvim) Library of 40+ independent Lua modules improving overall Neovim
+    - [mini.pick](https://nvim-mini.org/mini.nvim/readmes/mini-pick) Pick anything
+    - [mini.files](https://nvim-mini.org/mini.nvim/readmes/mini-files) Navigate and manipulate file system
+    - [mini.sessions](https://nvim-mini.org/mini.nvim/readmes/mini-sessions) Session management
+    - [mini.extra](https://nvim-mini.org/mini.nvim/readmes/mini-extra) Extra ‘mini.nvim’ functionality
+    - [mini.starter](https://nvim-mini.org/mini.nvim/readmes/mini-starter) Start screen
+    - [mini.icons](https://nvim-mini.org/mini.nvim/readmes/mini-icons) Icon provider
+    - [mini.indentscope](https://nvim-mini.org/mini.nvim/readmes/mini-indentscope) Visualize and work with indent scope
 
 ## Keymaps
 
@@ -61,6 +62,14 @@
 
 ### Plugins
 
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+| mode | keymap      | description           |
+|------|-------------|-----------------------|
+| `i`  | `<c-y>`     | cmp confirm           |
+| `i`  | `<c-e>`     | cmp abort             |
+| `i`  | `<c-space>` | cmp complete          |
+| `i`  | `<tab>`     | cmp luasnip jump next |
+| `i`  | `<s-tab>`   | cmp luasnip jump prev |
 - [neogit](https://github.com/NeogitOrg/neogit), [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 | mode     | keymap       | description               |
 |----------|--------------|---------------------------|

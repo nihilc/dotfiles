@@ -34,8 +34,6 @@ return {
         ["<c-y>"] = cmp.mapping.confirm({ select = true }),
         ["<c-e>"] = cmp.mapping.abort(),
         ["<c-space>"] = cmp.mapping.complete(),
-        ['<c-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<c-f>'] = cmp.mapping.scroll_docs(4),
         ["<tab>"] = cmp.mapping(function(fallback)
           if luasnip.locally_jumpable(1) then
             luasnip.jump(1)
