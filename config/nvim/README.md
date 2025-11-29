@@ -1,7 +1,7 @@
 ## Requirements
 
-- [fd]()
-- [jq]()
+- [fd](https://github.com/sharkdp/fd)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [wl-clipboard](https://github.com/bugaevc/wl-clipboard)
 - [zip](https://archlinux.org/packages/?name=zip)
 
