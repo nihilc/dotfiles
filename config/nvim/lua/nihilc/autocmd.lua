@@ -7,7 +7,7 @@ M.create("TextYankPost", {
   desc = "Highlight when yanking text",
   group = M.group,
   callback = function()
-    vim.highlight.on_yank({ timeout = 200 })
+    vim.hl.on_yank({ timeout = 200 })
   end,
 })
 
