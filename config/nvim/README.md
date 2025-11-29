@@ -1,6 +1,15 @@
-# Plugins
+## Requirements
+
+- [fd]()
+- [jq]()
+- [wl-clipboard](https://github.com/bugaevc/wl-clipboard)
+- [zip](https://archlinux.org/packages/?name=zip)
+
+## Plugins
 
 **Workflow**
+- [neogit](https://github.com/NeogitOrg/neogit) An interactive and powerful Git interface
+- [gitsigns](https://github.com/lewis6991/gitsigns.nvim) Git integration for buffers
 - [mini.pick](https://nvim-mini.org/mini.nvim/readmes/mini-pick) Pick anything
 - [mini.files](https://nvim-mini.org/mini.nvim/readmes/mini-files) Navigate and manipulate file system
 - [mini.sessions](https://nvim-mini.org/mini.nvim/readmes/mini-sessions) Session management
@@ -52,6 +61,18 @@
 
 ### Plugins
 
+- [neogit](https://github.com/NeogitOrg/neogit), [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
+| mode     | keymap       | description               |
+|----------|--------------|---------------------------|
+| `n`      | `<leader>gg` | Git Status                |
+| `n`      | `]c`         | Next Git Hunk             |
+| `n`      | `[c`         | Prev Git Hunk             |
+| `n`,`v`  | `<leader>gs` | Git Stage Hunk            |
+| `n`,`v`  | `<leader>gr` | Git Reset Hunk            |
+| `n`,     | `<leader>gS` | Git Stage Buffer          |
+| `n`,     | `<leader>gR` | Git Reset Buffer          |
+| `n`,     | `<leader>gv` | Git Preview Hunk          |
+| `n`,     | `<leader>gV` | Git Preview Hunk (inline) |
 - [mini.pick](https://nvim-mini.org/mini.nvim/readmes/mini-pick)
 | mode | keymap       | description    |
 |------|--------------|----------------|
