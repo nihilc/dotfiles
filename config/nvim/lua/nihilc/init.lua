@@ -28,5 +28,8 @@ require("lazy").setup({
   ui = {
     border = "single",
   },
-  checker = { enabled = true },
+  checker = {
+    enabled = false,
+    notify = true,
+  },
 })
