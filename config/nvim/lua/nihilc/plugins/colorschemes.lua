@@ -23,7 +23,7 @@ return {
             FloatBorder = { bg = "none" },
             FloatTitle = { bg = "none" },
             IblIndent = { fg = colors.palette.sumiInk4 },
-            MiniIndentscopeSymbol = { fg = colors.palette.dragonBlue  },
+            MiniIndentscopeSymbol = { fg = colors.palette.dragonBlue },
           }
         end,
       })
