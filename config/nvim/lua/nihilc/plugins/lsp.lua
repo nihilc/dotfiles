@@ -14,37 +14,39 @@ return {
   config = function()
     local servers = {
       -- Languages
-      "bashls",
-      "lua_ls",
-      "tinymist",
-      "pyright",
-      "gopls",
+      ["bashls"] = {},
+      ["lua_ls"] = {},
+      ["tinymist"] = {},
+      ["pyright"] = {},
+      ["gopls"] = {},
       -- Web
-      "ts_ls",
-      "html",
-      "cssls",
-      "jsonls",
+      ["ts_ls"] = {},
+      ["html"] = {},
+      ["cssls"] = {},
+      ["jsonls"] = {},
       -- Docs
-      "marksman",
+      ["marksman"] = {},
     }
 
     -- Install servers
     require("mason").setup()
     require("mason-lspconfig").setup({
-      ensure_installed = servers,
+      ensure_installed = vim.tbl_keys(servers),
       automatic_enable = false,
     })
-    -- Configure servers
-    vim.lsp.config("*", {
-      capabilities = vim.tbl_deep_extend(
-        "force",
-        {},
-        vim.lsp.protocol.make_client_capabilities(),
-        require("cmp_nvim_lsp").default_capabilities()
-      ),
-    })
-    -- Enable servers
-    vim.lsp.enable(servers)
+
+    -- Configure and Enable servers
+    local capabilities = vim.tbl_deep_extend(
+      "force",
+      {},
+      vim.lsp.protocol.make_client_capabilities(),
+      require("cmp_nvim_lsp").default_capabilities()
+    )
+    for server, config in pairs(servers) do
+      config.capabilities = config.capabilities or capabilities
+      vim.lsp.config(server, config)
+      vim.lsp.enable(server)
+    end
 
     -- Keymaps
     local autocmd = require("nihilc.autocmd")
