@@ -16,6 +16,7 @@
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) A completion engine plugin for neovim written in Lua
     - [luasnip](https://github.com/L3MON4D3/LuaSnip) Snippet Engine for Neovim written in Lua.
     - [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) Set of preconfigured snippets for different languages.
+- [treesitter](https://github.com/nvim-treesitter/nvim-treesitter) Nvim Treesitter configurations and abstraction layer
 - [neogit](https://github.com/NeogitOrg/neogit) An interactive and powerful Git interface
 - [gitsigns](https://github.com/lewis6991/gitsigns.nvim) Git integration for buffers
 - [mini.nvim](https://github.com/nvim-mini/mini.nvim) Library of 40+ independent Lua modules improving overall Neovim
@@ -91,6 +92,12 @@
 | `i`  | `<c-space>` | cmp complete          |
 | `i`  | `<tab>`     | cmp luasnip jump next |
 | `i`  | `<s-tab>`   | cmp luasnip jump prev |
+- [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+| mode | keymap      | description                       |
+|------|-------------|-----------------------------------|
+| `n`  | `<c-space>` | TSIncremental Selection Start     |
+| `n`  | `<c-j>`     | TSIncremental Selection increment |
+| `n`  | `<c-k>`     | TSIncremental Selection decrement |
 - [neogit](https://github.com/NeogitOrg/neogit), [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 | mode     | keymap       | description               |
 |----------|--------------|---------------------------|
