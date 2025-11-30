@@ -12,6 +12,7 @@
     - [lazydev](https://github.com/folke/lazydev.nvim) Faster LuaLS setup for Neovim
     - [mason](https://github.com/mason-org/mason.nvim) Easily install and manage LSP servers, DAP servers, linters, and formatters.
     - [mason-lspconfig](https://github.com/mason-org/mason-lspconfig.nvim) Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim.
+    - [conform](https://github.com/stevearc/conform.nvim) Lightweight yet powerful formatter plugin for Neovim.
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) A completion engine plugin for neovim written in Lua
     - [luasnip](https://github.com/L3MON4D3/LuaSnip) Snippet Engine for Neovim written in Lua.
     - [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) Set of preconfigured snippets for different languages.
@@ -66,7 +67,7 @@
 
 ### Plugins
 
-- [lspconfig](https://github.com/neovim/nvim-lspconfig/blob/master/lsp/html.lua) (on attach buffer)
+- [lspconfig](https://github.com/neovim/nvim-lspconfig/blob/master/lsp/html.lua) (on attach buffer), [conform](https://github.com/stevearc/conform.nvim)
 | mode | keymaps      | description                   |
 |------|--------------|-------------------------------|
 | `n`  | `]d`         | Next Diagnostic               |
@@ -81,6 +82,7 @@
 | `n`  | `<leader>lr` | Lsp Rename                    |
 | `n`  | `<leader>la` | Lsp Code Action               |
 | `n`  | `<leader>ld` | Lsp Diagnostics               |
+| `n`  | `<leader>lf` | Lsp/Conform Format            |
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 | mode | keymap      | description           |
 |------|-------------|-----------------------|

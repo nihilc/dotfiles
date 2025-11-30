@@ -12,7 +12,21 @@ return {
     "nvim-mini/mini.extra",
   },
   config = function()
-    local servers = { "tinymist", "gopls", "lua_ls", "pyright", "ts_ls", "html", "cssls", "jsonls" }
+    local servers = {
+      -- Languages
+      "bashls",
+      "lua_ls",
+      "tinymist",
+      "pyright",
+      "gopls",
+      -- Web
+      "ts_ls",
+      "html",
+      "cssls",
+      "jsonls",
+      -- Docs
+      "marksman",
+    }
 
     -- Install servers
     require("mason").setup()
