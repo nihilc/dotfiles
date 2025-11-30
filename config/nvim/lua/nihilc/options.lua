@@ -31,6 +31,11 @@ vim.o.wrap           = true      -- Visually wrap lines
 vim.o.breakindent    = true      -- Indent wrapped lines to match line start
 vim.o.breakindentopt = 'list:-1' -- Add padding for lists (if 'wrap' is set)
 vim.o.linebreak      = true      -- Wrap lines at 'breakat' (if 'wrap' is set)
+-- Folding
+vim.o.foldlevel   = 10     -- Fold nothing by default
+vim.o.foldnestmax = 10     -- Limit number of fold levels
+vim.o.foldmethod  = "expr" -- Use treesitter for folding
+vim.o.foldexpr    = "v:lua.vim.treesitter.foldexpr()"
 
 -- Editing ====================================================================
 vim.o.autoindent    = true    -- Use auto indent
