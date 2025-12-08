@@ -37,8 +37,8 @@ M.set({
   { mode = "v", lhs = "J", rhs = ":m '>+1<CR>gv=gv", desc = "Move selected lines down" },
   { mode = "v", lhs = "K", rhs = ":m '<-2<CR>gv=gv", desc = "Move selected lines up" },
   -- UI
-  { mode = "n", lhs = "<leader>uw", rhs = "<cmd>set wrap!<cr>", desc = "UI Toggle wrap" },
-  { mode = "n", lhs = "<leader>ul", rhs = "<cmd>set list!<cr>", desc = "UI Toggle list" },
+  { mode = "n", lhs = "<leader>uw", rhs = "<cmd>set wrap!<cr>", desc = "UI Toggle Wrap" },
+  { mode = "n", lhs = "<leader>ul", rhs = "<cmd>set list!<cr>", desc = "UI Toggle List" },
 })
 
 return M

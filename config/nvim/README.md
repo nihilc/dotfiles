@@ -66,8 +66,8 @@
 - UI
 | mode | keymap       | description    |
 |------|--------------|----------------|
-| `n`  | `<leader>uw` | UI Toggle wrap |
-| `n`  | `<leader>ul` | UI Toggle list |
+| `n`  | `<leader>uw` | UI Toggle Wrap |
+| `n`  | `<leader>ul` | UI Toggle List |
 
 ### Plugins
 
