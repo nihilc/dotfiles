@@ -28,6 +28,7 @@
     - [mini.icons](https://nvim-mini.org/mini.nvim/readmes/mini-icons) Icon provider
     - [mini.indentscope](https://nvim-mini.org/mini.nvim/readmes/mini-indentscope) Visualize and work with indent scope
 - [lualine](https://github.com/nvim-lualine/lualine.nvim) A blazing fast and easy to configure Neovim statusline written in Lua.
+- [which-key](https://github.com/folke/which-key.nvim) WhichKey helps you remember your Neovim keymaps
 
 ## Keymaps
 
@@ -136,3 +137,7 @@
 | `n`  | `<leader>sn` | Session New    |
 | `n`  | `<leader>sr` | Session Read   |
 | `n`  | `<leader>sd` | Session Delete |
+- Others
+| mode | keymap      | description               | plugin    |
+|------|-------------|---------------------------|-----------|
+| `n`  | `<leader>?` | Show Buffer Local Keymaps | which-key |
