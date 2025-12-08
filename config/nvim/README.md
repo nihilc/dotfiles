@@ -27,6 +27,7 @@
     - [mini.starter](https://nvim-mini.org/mini.nvim/readmes/mini-starter) Start screen
     - [mini.icons](https://nvim-mini.org/mini.nvim/readmes/mini-icons) Icon provider
     - [mini.indentscope](https://nvim-mini.org/mini.nvim/readmes/mini-indentscope) Visualize and work with indent scope
+- [lualine](https://github.com/nvim-lualine/lualine.nvim) A blazing fast and easy to configure Neovim statusline written in Lua.
 
 ## Keymaps
 
