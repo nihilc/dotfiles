@@ -29,6 +29,7 @@
     - [mini.indentscope](https://nvim-mini.org/mini.nvim/readmes/mini-indentscope) Visualize and work with indent scope
 - [lualine](https://github.com/nvim-lualine/lualine.nvim) A blazing fast and easy to configure Neovim statusline written in Lua.
 - [which-key](https://github.com/folke/which-key.nvim) WhichKey helps you remember your Neovim keymaps
+- [nvim-colorizer](https://github.com/catgoose/nvim-colorizer.lua) The fastest Neovim colorizer
 
 ## Keymaps
 
@@ -141,3 +142,4 @@
 | mode | keymap      | description               | plugin    |
 |------|-------------|---------------------------|-----------|
 | `n`  | `<leader>?` | Show Buffer Local Keymaps | which-key |
+| `n`  | `<leader>uc` | UI Toggle Colorizer | nvim-colorizer |
