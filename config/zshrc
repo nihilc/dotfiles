@@ -64,3 +64,4 @@ function y() {
 # Autocmd
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
+eval "$(zoxide init --cmd=cd zsh)"
