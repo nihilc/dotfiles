@@ -6,7 +6,9 @@ return {
     local tp = require("typst-preview")
     local keymaps = require("nihilc.keymaps")
 
-    tp.setup()
+    tp.setup({
+      open_cmd = "zen-browser %s -P typst-preview"
+    })
 
     keymaps.set({
       { lhs = "<leader>tp", rhs = "<cmd>TypstPreviewToggle<cr>", desc = "Typst Preview" },
