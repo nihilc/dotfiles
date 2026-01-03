@@ -5,15 +5,21 @@ return {
   config = function()
     local tp = require("typst-preview")
     local keymaps = require("nihilc.keymaps")
+    local autocmd = require("nihilc.autocmd")
 
     tp.setup({
-      open_cmd = "zen-browser %s -P typst-preview"
+      open_cmd = "zen-browser %s -P typst-preview",
     })
 
-    keymaps.set({
-      { lhs = "<leader>tp", rhs = "<cmd>TypstPreviewToggle<cr>", desc = "Typst Preview" },
-      { lhs = "<leader>ts", rhs = "<cmd>TypstPreviewSyncCursor<cr>", desc = "Typst Sync" },
-      { lhs = "<leader>tc", rhs = "<cmd>!typst compile %<cr>", desc = "Typst Compile" },
+    autocmd.create("FileType", {
+      pattern = "typst",
+      callback = function()
+        keymaps.set({
+          { lhs = "<leader>tp", rhs = "<cmd>TypstPreviewToggle<cr>", desc = "Typst Preview" },
+          { lhs = "<leader>ts", rhs = "<cmd>TypstPreviewSyncCursor<cr>", desc = "Typst Sync" },
+          { lhs = "<leader>tc", rhs = "<cmd>LspTinymistExportPdf<cr>", desc = "Typst Export" },
+        })
+      end,
     })
   end,
 }
