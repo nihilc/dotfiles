@@ -1,0 +1,137 @@
+binds {
+  // NOTE: Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
+  //       The entire command goes as a single argument. It's passed verbatim to `sh -c`.
+  // NOTE: You can use regular spawn with multiple arguments too (to avoid going through "sh"),
+  // NOTE: The allow-when-locked=true property makes them work even when the session is locked.
+
+  // Mod-Shift-/ shows a list of important hotkeys.
+  Mod+Shift+Slash { show-hotkey-overlay; }
+
+  // Programs
+  Mod+Return hotkey-overlay-title="Terminal: kitty"   { spawn "kitty"; }
+  Mod+Space  hotkey-overlay-title="App Launcher: rofi" { spawn-sh "rofi -show drun"; }
+
+  // Volume keys mappings for PipeWire & WirePlumber.
+  XF86AudioRaiseVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
+  XF86AudioLowerVolume  allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+  XF86AudioMute         allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+  XF86AudioMicMute      allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+  // Media keys mapping using playerctl. This will work with any MPRIS-enabled media player.
+  XF86AudioPlay         allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+  XF86AudioStop         allow-when-locked=true { spawn-sh "playerctl stop"; }
+  XF86AudioPrev         allow-when-locked=true { spawn-sh "playerctl previous"; }
+  XF86AudioNext         allow-when-locked=true { spawn-sh "playerctl next"; }
+  // Brightness key mappings for brightnessctl.
+  XF86MonBrightnessUp   allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set 10%+"; }
+  XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set 10%-"; }
+
+  // Open/close the Overview: a zoomed-out view of workspaces and windows.
+  Mod+O repeat=false { toggle-overview; }
+  // Close Window
+  Mod+Q repeat=false { close-window; }
+
+  // Windows / Workspaces
+  Mod+J { focus-window-or-workspace-down; }
+  Mod+K { focus-window-or-workspace-up; }
+  Mod+H { focus-column-left; }
+  Mod+L { focus-column-right; }
+
+  Mod+Ctrl+J { move-window-down-or-to-workspace-down; }
+  Mod+Ctrl+K { move-window-up-or-to-workspace-up; }
+  Mod+Ctrl+Shift+J { move-column-to-workspace-down; }
+  Mod+Ctrl+Shift+K { move-column-to-workspace-up; }
+  Mod+Ctrl+H { move-column-left; }
+  Mod+Ctrl+L { move-column-right; }
+
+  Mod+WheelScrollDown       cooldown-ms=150 { focus-workspace-down; }
+  Mod+WheelScrollUp         cooldown-ms=150 { focus-workspace-up; }
+  Mod+Shift+WheelScrollDown cooldown-ms=150 { focus-column-right; }
+  Mod+Shift+WheelScrollUp   cooldown-ms=150 { focus-column-left; }
+
+  // Monitors
+  // Mod+Shift+H     { focus-monitor-left; }
+  // Mod+Shift+J     { focus-monitor-down; }
+  // Mod+Shift+K     { focus-monitor-up; }
+  // Mod+Shift+L     { focus-monitor-right; }
+  //
+  // Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
+  // Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
+  // Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
+  // Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
+
+  // Mouse Wheel
+
+  // You can refer to workspaces by index. However, keep in mind that
+  // niri is a dynamic workspace system, so these commands are kind of
+  // "best effort". Trying to refer to a workspace index bigger than
+  // the current workspace count will instead refer to the bottommost
+  // (empty) workspace.
+  //
+  // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
+  // will all refer to the 3rd workspace.
+  Mod+1 { focus-workspace 1; }
+  Mod+2 { focus-workspace 2; }
+  Mod+3 { focus-workspace 3; }
+  Mod+4 { focus-workspace 4; }
+  Mod+5 { focus-workspace 5; }
+  Mod+6 { focus-workspace 6; }
+  Mod+7 { focus-workspace 7; }
+  Mod+8 { focus-workspace 8; }
+  Mod+9 { focus-workspace 9; }
+  Mod+Ctrl+1 { move-column-to-workspace 1; }
+  Mod+Ctrl+2 { move-column-to-workspace 2; }
+  Mod+Ctrl+3 { move-column-to-workspace 3; }
+  Mod+Ctrl+4 { move-column-to-workspace 4; }
+  Mod+Ctrl+5 { move-column-to-workspace 5; }
+  Mod+Ctrl+6 { move-column-to-workspace 6; }
+  Mod+Ctrl+7 { move-column-to-workspace 7; }
+  Mod+Ctrl+8 { move-column-to-workspace 8; }
+  Mod+Ctrl+9 { move-column-to-workspace 9; }
+  // Alternatively, there are commands to move just a single window:
+  // Mod+Ctrl+1 { move-window-to-workspace 1; }
+
+  // Switches focus between the current and the previous workspace.
+  // Mod+Tab { focus-workspace-previous; }
+
+  // The following binds move the focused window in and out of a column.
+  Mod+BracketLeft  { consume-or-expel-window-left; }
+  Mod+BracketRight { consume-or-expel-window-right; }
+
+  // Window and Column size
+  Mod+F { maximize-column; }
+  Mod+R { switch-preset-column-width; }
+  Mod+Shift+F { reset-window-height; }
+  Mod+Shift+R { switch-preset-window-height; }
+  Mod+Ctrl+F { fullscreen-window; }
+
+  Mod+C { center-column; }
+  Mod+Ctrl+C { center-visible-columns; }
+
+  // Move the focused window between the floating and the tiling layout.
+  Mod+V       { toggle-window-floating; }
+  Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+
+  // Toggle tabbed column display mode.
+  // Windows in this column will appear as vertical tabs,
+  // rather than stacked on top of each other.
+  Mod+W { toggle-column-tabbed-display; }
+
+  // ScreenShot
+  Mod+S { screenshot; }
+  Mod+Ctrl+S { screenshot-window; }
+  Mod+Shift+S { screenshot-screen; }
+
+  // The quit action will show a confirmation dialog to avoid accidental exits.
+  Mod+Alt+E { quit; }
+  // Powers off the monitors.
+  Mod+Alt+P { power-off-monitors; }
+}
+
+recent-windows {
+  binds {
+    Mod+Tab       { next-window     scope="all"; }
+    Mod+Shift+Tab { previous-window scope="all"; }
+    Alt+Tab       { next-window     scope="workspace"; }
+    Alt+Shift+Tab { previous-window scope="workspace"; }
+  }
+}

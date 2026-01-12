@@ -1,0 +1,15 @@
+// Run `niri msg outputs` while inside a niri instance to list outputs
+// https://yalter.github.io/niri/Configuration:-Outputs
+output "eDP-1" { off; }
+output "HDMI-A-1" {
+    // Resolution and, optionally, refresh rate of the output.
+    // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
+    mode "1920x1080@60.000"
+
+    // You can use integer or fractional scale, example use 1.5 for 150% scale.
+    scale 1
+
+    // Transform allows to rotate the output counter-clockwise, valid values are:
+    // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
+    transform "normal"
+}
