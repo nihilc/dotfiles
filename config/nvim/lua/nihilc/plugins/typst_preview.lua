@@ -8,7 +8,7 @@ return {
     local autocmd = require("nihilc.autocmd")
 
     tp.setup({
-      open_cmd = "zen-browser %s -P typst-preview",
+      open_cmd = "flatpak run app.zen_browser.zen %s -P typst-preview > /dev/null 2>&1",
     })
 
     autocmd.create("FileType", {
