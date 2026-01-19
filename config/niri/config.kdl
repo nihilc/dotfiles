@@ -68,6 +68,7 @@ layout {
   }
 }
 
+// Mod/Alt+Tab menu
 recent-windows {
   highlight {
     padding 20
@@ -79,6 +80,16 @@ recent-windows {
     max-height 720
     max-scale 1
   }
+}
+
+// Overview
+overview {
+  zoom 0.66667
+  // backdrop-color "#1F1F28"
+}
+layer-rule {
+  match namespace="swww-daemonbottom"
+  place-within-backdrop true
 }
 
 // Animation settings.
