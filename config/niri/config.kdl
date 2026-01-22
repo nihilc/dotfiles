@@ -87,10 +87,6 @@ overview {
   zoom 0.66667
   // backdrop-color "#1F1F28"
 }
-layer-rule {
-  match namespace="swww-daemonbottom"
-  place-within-backdrop true
-}
 
 // Animation settings.
 // https://yalter.github.io/niri/Configuration:-Animations
