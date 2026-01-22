@@ -52,12 +52,12 @@ layout {
   shadow { off; }
 
   tab-indicator {
-    gap 8
-    width 2
+    gap 0
+    width 4
     length total-proportion=1.0
-    place-within-column
+    // place-within-column
     // hide-when-single-tab
-    position "top"
+    position "left"
     active-color "#7E9CD8"
     inactive-color "#363646"
     urgent-color "#C34043"
