@@ -3,6 +3,7 @@ spawn-at-startup "gammastep"
 spawn-sh-at-startup "swww-daemon & swww img ~/Pictures/Wallpapers/current"
 spawn-sh-at-startup "swww-daemon -n bottom & swww img ~/Pictures/Wallpapers/current-blur -n bottom"
 spawn-at-startup "kded6"
+spawn-at-startup "waybar"
 
 
 // don't show the hotkey tooltip at startup
@@ -14,4 +15,4 @@ hotkey-overlay {
 prefer-no-csd
 
 // The path is formatted with strftime(3) to give you the screenshot date and time.
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path null
