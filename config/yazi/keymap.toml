@@ -1,5 +1,8 @@
-[mgr]
-append_keymap = [
-	{ on = "<C-w>", run = "shell \"swww img --transition-type=grow --transition-pos=top $0\"", desc = "Set wallpaper" },
-	{ on = "<C-S-w>", run = "shell \"swww img --transition-type=grow --transition-pos=top -n bottom $0\"", desc = "Set wallpaper overlay" },
-]
+[[mgr.prepend_keymap]]
+on  = "y"
+run = [ 'shell -- for path in %s; do echo "file://$path"; done | wl-copy -t text/uri-list', "yank" ]
+[[mgr.prepend_keymap]]
+on   = "<C-w>"
+desc = "Set wallpaper"
+run  = "shell -- hyprctl hyprpaper wallpaper ',%s,fill'"
+# run  = "shell -- swww img --transition-type=grow --transition-pos=top $0"
