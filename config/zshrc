@@ -65,3 +65,4 @@ function y() {
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd=cd zsh)"
+PF_INFO="ascii title os host wm uptime memory disk" pfetch
