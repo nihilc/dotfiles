@@ -1,0 +1,63 @@
+# Ghostty's website https://ghostty.org/docs/config.
+
+#: General
+# font-family = "Liberation Mono"
+font-size = 13
+class = ghostty
+
+#: Behaviour
+window-inherit-working-directory = false
+gtk-tabs-location = hidden
+
+#: Keybindings
+# general
+keybind = clear
+keybind = ctrl+shift+comma=reload_config
+# clipboard
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
+# scrolling
+keybind = ctrl+shift+k=scroll_page_lines:-1
+keybind = ctrl+shift+j=scroll_page_lines:1
+keybind = ctrl+shift+h=jump_to_prompt:-1
+keybind = ctrl+shift+l=jump_to_prompt:1
+# font
+keybind = ctrl+shift+minus=decrease_font_size:1
+keybind = ctrl+shift+equal=increase_font_size:1
+keybind = ctrl+shift+0=reset_font_size
+# tabs
+# keybind = ctrl+shift+t=new_tab
+# keybind = ctrl+shift+w=close_tab
+# keybind = ctrl+shift+q=close_window
+# keybind = ctrl+tab=next_tab
+# keybind = ctrl+shift+tab=previous_tab
+
+
+#: Theme
+# Kanagawa
+# https://github.com/rebelot/kanagawa.nvim/
+
+foreground = #dcd7ba
+background = #1f1f28
+selection-foreground = #c8c093
+selection-background = #2d4f67
+cursor-color = #c8c093
+cursor-text = #1d202f
+palette = 0=#16161d
+palette = 8=#727169
+palette = 1=#c34043
+palette = 9=#e82424
+palette = 2=#76946a
+palette = 10=#98bb6c
+palette = 3=#c0a36e
+palette = 11=#e6c384
+palette = 4=#7e9cd8
+palette = 12=#7fb4ca
+palette = 5=#957fb8
+palette = 13=#938aa9
+palette = 6=#6a9589
+palette = 14=#7aa89f
+palette = 7=#c8c093
+palette = 15=#dcd7ba
+palette = 16=#ffa066
+palette = 17=#ff5d62
