@@ -19,6 +19,9 @@ return {
       ["tinymist"] = {},
       ["pyright"] = {},
       ["gopls"] = {},
+      ["qmlls"] = {
+        cmd = { "qmlls6", "-E" }, -- install with qt6-declarative
+      },
       -- Web
       ["ts_ls"] = {},
       ["html"] = {},
