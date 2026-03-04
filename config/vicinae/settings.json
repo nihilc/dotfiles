@@ -28,10 +28,10 @@
       }
    },
    "favorites": [
-      "applications:dev.vencord.Vesktop",
-      "applications:steam",
       "applications:app.zen_browser.zen",
       "applications:youtube-music",
+      "applications:steam",
+      "applications:dev.vencord.Vesktop",
       "font:browse",
       "clipboard:history"
    ],
