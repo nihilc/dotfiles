@@ -55,10 +55,25 @@
             "bvnc": {
                "enabled": false
             },
+            "htop": {
+               "enabled": false
+            },
+            "org.freedesktop.IBus.Setup": {
+               "enabled": false
+            },
+            "org.freedesktop.MalcontentControl": {
+               "enabled": false
+            },
+            "org.gnome.ColorProfileViewer": {
+               "enabled": false
+            },
             "qv4l2": {
                "enabled": false
             },
             "qvidcap": {
+               "enabled": false
+            },
+            "rygel-preferences": {
                "enabled": false
             },
             "vicinae": {
