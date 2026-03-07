@@ -83,10 +83,10 @@
                 {
                     "clockColor": "none",
                     "customFont": "",
-                    "formatHorizontal": "HH:mm ddd, MMM dd",
-                    "formatVertical": "MM dd - HH mm",
+                    "formatHorizontal": "MMM dd, HH:mm",
+                    "formatVertical": "MM dd ━ HH mm",
                     "id": "Clock",
-                    "tooltipFormat": "HH:mm ddd, MMM dd",
+                    "tooltipFormat": "yyyy MMM dd, HH:mm ddd",
                     "useCustomFont": false
                 },
                 {

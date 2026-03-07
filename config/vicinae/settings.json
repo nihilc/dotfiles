@@ -18,7 +18,7 @@
    "theme": {
       "dark": {
          "name": "kanagawa",
-         "icon_theme": "Adwaita"
+         "icon_theme": "Papirus-Dark"
       }
    },
    "launcher_window": {
@@ -32,8 +32,10 @@
       "applications:youtube-music",
       "applications:steam",
       "applications:dev.vencord.Vesktop",
-      "font:browse",
-      "clipboard:history"
+      "files:search",
+      "clipboard:history",
+      "calculator:history",
+      "font:browse"
    ],
    "providers": {
       "applications": {
@@ -109,7 +111,7 @@
          "enabled": false
       },
       "power": {
-         "enabled": true,
+         "enabled": false,
          "entrypoints": {
             "hibernate": {
                "enabled": true
