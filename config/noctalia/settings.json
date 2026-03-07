@@ -53,11 +53,14 @@
         "displayMode": "always_visible",
         "floating": false,
         "fontScale": 1,
-        "frameRadius": 12,
-        "frameThickness": 8,
+        "frameRadius": 4,
+        "frameThickness": 4,
         "hideOnOverview": false,
-        "marginHorizontal": 4,
-        "marginVertical": 4,
+        "marginHorizontal": 8,
+        "marginVertical": 8,
+        "middleClickAction": "none",
+        "middleClickCommand": "",
+        "middleClickFollowMouse": false,
         "monitors": [
         ],
         "mouseWheelAction": "none",
@@ -65,6 +68,9 @@
         "outerCorners": true,
         "position": "left",
         "reverseScroll": false,
+        "rightClickAction": "controlCenter",
+        "rightClickCommand": "",
+        "rightClickFollowMouse": true,
         "screenOverrides": [
         ],
         "showCapsule": true,
@@ -78,7 +84,7 @@
                     "clockColor": "none",
                     "customFont": "",
                     "formatHorizontal": "HH:mm ddd, MMM dd",
-                    "formatVertical": "HH mm - dd MM",
+                    "formatVertical": "MM dd - HH mm",
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
                     "useCustomFont": false
@@ -125,6 +131,25 @@
             ],
             "right": [
                 {
+                    "defaultSettings": {
+                        "audioCodec": "opus",
+                        "audioSource": "default_output",
+                        "colorRange": "limited",
+                        "copyToClipboard": false,
+                        "directory": "",
+                        "filenamePattern": "recording_yyyyMMdd_HHmmss",
+                        "frameRate": "60",
+                        "hideInactive": false,
+                        "iconColor": "none",
+                        "quality": "very_high",
+                        "resolution": "original",
+                        "showCursor": true,
+                        "videoCodec": "h264",
+                        "videoSource": "portal"
+                    },
+                    "id": "plugin:screen-recorder"
+                },
+                {
                     "compactMode": false,
                     "hideMode": "hidden",
                     "hideWhenIdle": false,
@@ -152,7 +177,7 @@
                     ]
                 },
                 {
-                    "displayMode": "onhover",
+                    "displayMode": "alwaysHide",
                     "iconColor": "none",
                     "id": "Volume",
                     "middleClickCommand": "pwvucontrol || pavucontrol",
@@ -226,7 +251,7 @@
                 "id": "audio-card"
             },
             {
-                "enabled": false,
+                "enabled": true,
                 "id": "brightness-card"
             },
             {
@@ -234,12 +259,11 @@
                 "id": "weather-card"
             },
             {
-                "enabled": false,
+                "enabled": true,
                 "id": "media-sysmon-card"
             }
         ],
         "diskPath": "/",
-        "openAtMouseOnBarRightClick": true,
         "position": "close_to_bar_button",
         "shortcuts": {
             "left": [
@@ -253,21 +277,40 @@
                     "id": "WallpaperSelector"
                 },
                 {
-                    "id": "NoctaliaPerformance"
+                    "defaultSettings": {
+                        "iconColor": "none"
+                    },
+                    "id": "plugin:color-scheme-creator"
                 }
             ],
             "right": [
                 {
-                    "id": "Notifications"
-                },
-                {
-                    "id": "PowerProfile"
+                    "defaultSettings": {
+                        "audioCodec": "opus",
+                        "audioSource": "default_output",
+                        "colorRange": "limited",
+                        "copyToClipboard": false,
+                        "directory": "",
+                        "filenamePattern": "recording_yyyyMMdd_HHmmss",
+                        "frameRate": "60",
+                        "hideInactive": false,
+                        "iconColor": "none",
+                        "quality": "very_high",
+                        "resolution": "original",
+                        "showCursor": true,
+                        "videoCodec": "h264",
+                        "videoSource": "portal"
+                    },
+                    "id": "plugin:screen-recorder"
                 },
                 {
                     "id": "KeepAwake"
                 },
                 {
-                    "id": "NightLight"
+                    "id": "PowerProfile"
+                },
+                {
+                    "id": "NoctaliaPerformance"
                 }
             ]
         }
@@ -348,6 +391,7 @@
         "clockStyle": "analog",
         "compactLockScreen": true,
         "dimmerOpacity": 0,
+        "enableBlurBehind": true,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": false,
         "enableShadows": false,
@@ -412,17 +456,17 @@
     },
     "idle": {
         "customCommands": "[]",
-        "enabled": false,
+        "enabled": true,
         "fadeDuration": 5,
         "lockCommand": "",
-        "lockTimeout": 660,
+        "lockTimeout": 300,
         "resumeLockCommand": "",
         "resumeScreenOffCommand": "",
         "resumeSuspendCommand": "",
         "screenOffCommand": "",
-        "screenOffTimeout": 600,
+        "screenOffTimeout": 300,
         "suspendCommand": "",
-        "suspendTimeout": 1800
+        "suspendTimeout": 900
     },
     "location": {
         "analogClockInCalendar": false,
@@ -440,6 +484,7 @@
     },
     "network": {
         "airplaneModeEnabled": false,
+        "bluetoothAutoConnect": true,
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
         "bluetoothRssiPollIntervalMs": 60000,
@@ -451,12 +496,12 @@
     },
     "nightLight": {
         "autoSchedule": true,
-        "dayTemp": "6500",
+        "dayTemp": "5002",
         "enabled": false,
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
-        "nightTemp": "4000"
+        "nightTemp": "4010"
     },
     "notifications": {
         "backgroundOpacity": 1,
@@ -567,7 +612,7 @@
         "showHeader": true,
         "showKeybinds": true
     },
-    "settingsVersion": 54,
+    "settingsVersion": 56,
     "systemMonitor": {
         "batteryCriticalThreshold": 5,
         "batteryWarningThreshold": 20,

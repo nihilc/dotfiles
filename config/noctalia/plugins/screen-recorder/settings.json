@@ -1,0 +1,17 @@
+{
+  "hideInactive": true,
+  "iconColor": "none",
+  "directory": "/home/nihilc/Videos/Screencasts",
+  "filenamePattern": "screencast_yyyyMMdd_HHmmss",
+  "frameRate": "60",
+  "customFrameRate": "60",
+  "audioCodec": "opus",
+  "videoCodec": "h264",
+  "quality": "high",
+  "colorRange": "limited",
+  "showCursor": true,
+  "copyToClipboard": true,
+  "audioSource": "default_output",
+  "videoSource": "portal",
+  "resolution": "original"
+}
