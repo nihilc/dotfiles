@@ -108,7 +108,7 @@
          "enabled": false
       },
       "manage-shortcuts": {
-         "enabled": false
+         "enabled": true
       },
       "power": {
          "enabled": false,
