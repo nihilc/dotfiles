@@ -57,7 +57,13 @@
             "bvnc": {
                "enabled": false
             },
+            "cmake-gui": {
+               "enabled": false
+            },
             "htop": {
+               "enabled": false
+            },
+            "mpv": {
                "enabled": false
             },
             "org.freedesktop.IBus.Setup": {
