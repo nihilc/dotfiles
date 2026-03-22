@@ -32,32 +32,4 @@ keybind = ctrl+shift+0=reset_font_size
 # keybind = ctrl+tab=next_tab
 # keybind = ctrl+shift+tab=previous_tab
 
-
-#: Theme
-# Kanagawa
-# https://github.com/rebelot/kanagawa.nvim/
-
-foreground = #dcd7ba
-background = #1f1f28
-selection-foreground = #c8c093
-selection-background = #2d4f67
-cursor-color = #c8c093
-cursor-text = #1d202f
-palette = 0=#16161d
-palette = 8=#727169
-palette = 1=#c34043
-palette = 9=#e82424
-palette = 2=#76946a
-palette = 10=#98bb6c
-palette = 3=#c0a36e
-palette = 11=#e6c384
-palette = 4=#7e9cd8
-palette = 12=#7fb4ca
-palette = 5=#957fb8
-palette = 13=#938aa9
-palette = 6=#6a9589
-palette = 14=#7aa89f
-palette = 7=#c8c093
-palette = 15=#dcd7ba
-palette = 16=#ffa066
-palette = 17=#ff5d62
+theme = noctalia
