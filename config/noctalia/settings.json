@@ -659,11 +659,15 @@
         "activeTemplates": [
             {
                 "enabled": true,
+                "id": "discord"
+            },
+            {
+                "enabled": true,
                 "id": "gtk"
             },
             {
                 "enabled": true,
-                "id": "discord"
+                "id": "qt"
             }
         ],
         "enableUserTheming": false
