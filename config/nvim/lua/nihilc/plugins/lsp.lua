@@ -57,6 +57,7 @@ return {
     autocmd.create("LspAttach", {
       desc = "Lsp keymaps",
       callback = function(e)
+        -- Global keymaps
         local keys = {
           {
             desc = "Next Diagnostic",
@@ -95,6 +96,25 @@ return {
           { desc = "Lsp Code Action", lhs = "<leader>la", rhs = vim.lsp.buf.code_action },
           { desc = "Lsp Diagnostics", lhs = "<leader>ld", rhs = vim.diagnostic.open_float },
         }
+
+        -- Language specific keymaps
+        local client = vim.lsp.get_client_by_id(e.data.client_id)
+        if client then
+          -- Typst
+          if client.name == "tinymist" then
+            table.insert(keys, {
+              lhs = "<leader>te",
+              rhs = "<cmd>LspTinymistExportPdf<cr>",
+              desc = "Tinymist Export Pdf",
+            })
+            table.insert(keys, {
+              lhs = "<leader>ti",
+              rhs = "<cmd>LspTinymistPinMain<cr>",
+              desc = "Tinymist Pin Main",
+            })
+          end
+        end
+
         for _, key in pairs(keys) do
           key.opts = key.opts or { buffer = e.buf }
         end

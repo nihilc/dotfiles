@@ -17,7 +17,6 @@ return {
         keymaps.set({
           { lhs = "<leader>tp", rhs = "<cmd>TypstPreviewToggle<cr>", desc = "Typst Preview" },
           { lhs = "<leader>ts", rhs = "<cmd>TypstPreviewSyncCursor<cr>", desc = "Typst Sync" },
-          { lhs = "<leader>tc", rhs = "<cmd>LspTinymistExportPdf<cr>", desc = "Typst Export" },
         })
       end,
     })
