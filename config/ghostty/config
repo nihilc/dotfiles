@@ -6,6 +6,7 @@ font-size = 13
 class = ghostty
 
 #: Behaviour
+mouse-hide-while-typing = true
 window-inherit-working-directory = false
 gtk-tabs-location = hidden
 
