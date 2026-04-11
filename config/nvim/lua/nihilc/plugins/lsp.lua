@@ -19,6 +19,7 @@ return {
       ["tinymist"] = {},
       ["pyright"] = {},
       ["gopls"] = {},
+      ["rust_analyzer"] = {},
       ["qmlls"] = {
         cmd = { "qmlls6", "-E" }, -- install with qt6-declarative
       },
