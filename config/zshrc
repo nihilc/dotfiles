@@ -47,7 +47,7 @@ alias ls='ls -Fvh --color=auto --group-directories-first'
 alias la='ls -A'
 alias lls='ls -l'
 alias lla='ls -lA'
-alias tree='tree -C'
+alias tree='tree -C --dirsfirst'
 alias dir='dir --color=auto'
 alias grep='grep --color=auto'
 alias rm="rm -i"
