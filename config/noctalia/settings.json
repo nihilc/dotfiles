@@ -420,7 +420,7 @@
         },
         "language": "",
         "lockOnSuspend": true,
-        "lockScreenAnimations": false,
+        "lockScreenAnimations": true,
         "lockScreenBlur": 0.75,
         "lockScreenCountdownDuration": 10000,
         "lockScreenMonitors": [
@@ -559,8 +559,8 @@
     "sessionMenu": {
         "countdownDuration": 10000,
         "enableCountdown": true,
-        "largeButtonsLayout": "single-row",
-        "largeButtonsStyle": false,
+        "largeButtonsLayout": "grid",
+        "largeButtonsStyle": true,
         "position": "center",
         "powerOptions": [
             {
@@ -609,11 +609,18 @@
                 "action": "rebootToUefi",
                 "command": "",
                 "countdownEnabled": true,
-                "enabled": true,
-                "keybind": "7"
+                "enabled": false,
+                "keybind": ""
+            },
+            {
+                "action": "userspaceReboot",
+                "command": "",
+                "countdownEnabled": true,
+                "enabled": false,
+                "keybind": ""
             }
         ],
-        "showHeader": true,
+        "showHeader": false,
         "showKeybinds": true
     },
     "settingsVersion": 59,
@@ -653,10 +660,6 @@
             {
                 "enabled": true,
                 "id": "qt"
-            },
-            {
-                "enabled": true,
-                "id": "hyprland"
             },
             {
                 "enabled": true,
