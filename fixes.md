@@ -34,6 +34,8 @@ export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
 ### Disable integrad display
 
+**this can give issues with hyprland after sleep if so then try the next section**
+
 List the displays
 
 ```sh
@@ -43,6 +45,16 @@ ls /sys/class/drm
 There are something like `card1-eDP-1` and `card1-HDMI-A-1` the `eDP-X` is the integrated
 
 To disable the display in systemd-boot, edit `/boot/loader/entries/<entry-date>_linux.conf` and append in options `video=eDP-1:d`
+
+### Disable integrated display in gdm and hyprland
+
+- For hyprland just
+
+  ```lua
+  hl.monitor({ output = "eDP-1", disabled = true })
+  ```
+
+- For GDM first start gnome and configure the display to disable the integrated monitor, then copy the monitors.xml file `sh sudo cp ~/.config/monitors.xml /etc/xdg/monitors.xml`
 
 ### Fix gtk3 theme for legacy apps
 
@@ -64,6 +76,7 @@ flatpak override --user --env=GTK_THEME=adw-gtk3-dark
 ### Uniform look between gtk and qt (adwaita)
 
 Install qt6ct and kvantum
+
 ```sh
 yay -S qt6ct kvantum
 ```
