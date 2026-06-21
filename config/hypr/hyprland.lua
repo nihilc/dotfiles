@@ -209,6 +209,7 @@ local mainMod = "SUPER"
 -- System / Shell
 -- hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + ALT + Q", hl.dsp.exec_cmd(ipc .. "sessionMenu toggle"))
+hl.bind(mainMod .. " + ALT + V", hl.dsp.exec_cmd(ipc .. "volume togglePanel"))
 hl.bind(mainMod .. " + ALT + B", hl.dsp.exec_cmd(ipc .. "bar toggle"))
 hl.bind(mainMod .. " + ALT + N", hl.dsp.exec_cmd(ipc .. "notifications toggleHistory"))
 hl.bind(mainMod .. " + ALT + M", hl.dsp.exec_cmd(ipc .. "media toggle"))
