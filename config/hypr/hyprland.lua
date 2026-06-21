@@ -312,7 +312,12 @@ hl.window_rule({
 
 hl.window_rule({
 	name = "center-all-floating-windows",
-	match = { float = true },
+	match = {
+		-- At least contain 1 character to exclude electron apps context/dropdown/tooltips menus
+		class = ".+",
+		title = ".+",
+		float = true,
+	},
 	center = true,
 })
 
