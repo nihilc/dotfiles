@@ -1,3 +1,12 @@
+### zsh compdump and history
+
+I configure zsh to store history in `$XDG_STATE_HOME/zsh/history` but the directory don't exists by default so you need to create it, exact case for zcompdump in `$XDG_CACHE_HOME/zsh/zcompdump`
+
+```bash
+mkdir -p $XDG_STATE_HOME/zsh
+mkdir -p $XDG_CACHE_HOME/zsh
+```
+
 ### Enable ssh-agent start on session
 
 Create `~/.config/systemd/user/ssh-agent.service`
@@ -66,6 +75,8 @@ sudo pacman -S adw-gtk-theme
 
 Set `adw-gtk3-dark` on tweaks for legacy applications
 
+Also install `nwg-look` and set theme there
+
 To fix flatpaks
 
 ```sh
@@ -93,3 +104,25 @@ Set environment variables
 QT_QPA_PLATFORMTHEME=qt6ct
 QT_STYLE_OVERRIDE=kvantum
 ```
+
+### GTK 4 remove close,minimize,maximize buttons
+
+create `~/.config/gtk-4.0/settings.ini` and set
+
+```
+[Settings]
+gtk-application-prefer-dark-theme=true
+gtk-decoration-layout=:
+```
+
+
+### Zen-browser
+
+remove border separation and radius, open `about:config` and set:
+
+```
+zen.theme.border-radius	= 0
+zen.theme.content-element-separation = 0
+```
+
+if for some razon Zen is using a white theme because of gtk theming configuration just right click on side bar, edit theme, and click on the moon on top of the popup
