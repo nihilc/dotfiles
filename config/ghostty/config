@@ -9,8 +9,8 @@ class = ghostty
 mouse-hide-while-typing = true
 window-inherit-working-directory = false
 window-padding-balance = true
-# gtk-titlebar-hide-when-maximized = true
-gtk-titlebar-style =  tabs
+gtk-titlebar-hide-when-maximized = true
+# gtk-titlebar-style =  tabs
 # gtk-tabs-location = hidden
 
 #: Keybindings
