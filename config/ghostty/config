@@ -33,4 +33,4 @@ keybind = ctrl+shift+q=close_window
 keybind = ctrl+tab=next_tab
 keybind = ctrl+shift+tab=previous_tab
 
-theme = Kanagawa Wave
+theme = Oxide
