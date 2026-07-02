@@ -650,19 +650,19 @@
     "templates": {
         "activeTemplates": [
             {
-                "enabled": true,
+                "enabled": false,
                 "id": "discord"
             },
             {
-                "enabled": true,
+                "enabled": false,
                 "id": "gtk"
             },
             {
-                "enabled": true,
+                "enabled": false,
                 "id": "qt"
             },
             {
-                "enabled": true,
+                "enabled": false,
                 "id": "ghostty"
             }
         ],
