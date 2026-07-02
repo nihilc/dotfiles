@@ -1,3 +1,18 @@
+### Local send add firewall rule
+
+If you have installed `ufw` execute the following rules
+
+```sh
+sudo ufw allow 53317/tcp
+sudo ufw allow 53317/udp
+```
+
+and the restar the firewall
+
+```
+sudo ufw reload
+```
+
 ### zsh compdump and history
 
 I configure zsh to store history in `$XDG_STATE_HOME/zsh/history` but the directory don't exists by default so you need to create it, exact case for zcompdump in `$XDG_CACHE_HOME/zsh/zcompdump`
