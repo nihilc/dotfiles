@@ -8,6 +8,9 @@ class = ghostty
 #: Behaviour
 mouse-hide-while-typing = true
 window-inherit-working-directory = false
+window-padding-balance = true
+# gtk-titlebar-hide-when-maximized = true
+gtk-titlebar-style =  tabs
 # gtk-tabs-location = hidden
 
 #: Keybindings
@@ -32,5 +35,7 @@ keybind = ctrl+shift+w=close_tab
 keybind = ctrl+shift+q=close_window
 keybind = ctrl+tab=next_tab
 keybind = ctrl+shift+tab=previous_tab
+# window
+keybind = f11=toggle_fullscreen
 
 theme = Oxide
