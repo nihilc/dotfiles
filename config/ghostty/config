@@ -4,11 +4,13 @@
 # font-family = "Liberation Mono"
 font-size = 13
 class = ghostty
+background-opacity = 0.9
+window-decoration = none
+window-padding-balance = true
+
 
 #: Behaviour
 mouse-hide-while-typing = true
-window-decoration = none
-window-padding-balance = true
 window-inherit-working-directory = false
 
 #: Keybindings
