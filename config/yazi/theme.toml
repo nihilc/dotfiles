@@ -11,7 +11,7 @@ find_position = { fg = "#aeaeae", bg = "reset", italic = true }
 marker_copied   = { fg = "#5bb661", bg = "#5bb661" }
 marker_cut      = { fg = "#ed756e", bg = "#ed756e" }
 marker_marked   = { fg = "#00baaa", bg = "#00baaa" }
-marker_selected = { fg = "#222222", bg = "#222222" }
+marker_selected = { fg = "#00baaa", bg = "#00baaa" }
 
 count_copied   = { fg = "#161616", bg = "#5bb661" }
 count_cut      = { fg = "#161616", bg = "#ed756e" }
