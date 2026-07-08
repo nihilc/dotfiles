@@ -4,7 +4,7 @@
 # font-family = "Liberation Mono"
 font-size = 13
 class = ghostty
-background-opacity = 0.9
+background-opacity = 1
 window-decoration = none
 window-padding-balance = true
 
@@ -38,4 +38,4 @@ keybind = ctrl+shift+tab=previous_tab
 # window
 keybind = f11=toggle_fullscreen
 
-theme = Oxide
+theme = Vague
