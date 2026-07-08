@@ -8,5 +8,7 @@ use = "Rolv-Apneseth/starship"
 rev = "159eaba"
 hash = "7de446280b1ba8c49ffd86dbc24bbbe6"
 
-[flavor]
-deps = []
+[[flavor.deps]]
+use = "vague-theme/vague"
+rev = "e96fa7b"
+hash = "63e18ea1efd285060c7290c19be16eae"
