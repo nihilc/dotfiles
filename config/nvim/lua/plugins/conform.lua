@@ -3,8 +3,6 @@ return {
   dependencies = { "neovim/nvim-lspconfig" },
   config = function()
     local conform = require("conform")
-    local keymaps = require("nihilc.keymaps")
-
     conform.setup({
       formatters_by_ft = {
         -- Languages
@@ -23,14 +21,8 @@ return {
       },
     })
 
-    keymaps.set({
-      {
-        desc = "Lsp/Conform Format",
-        lhs = "<leader>lf",
-        rhs = function()
-          conform.format({ lsp_format = "fallback" })
-        end,
-      },
-    })
+    vim.keymap.set("n", "<leader>F", function()
+      conform.format({ lsp_format = "fallback" })
+    end, { desc = "Format Conform/Lsp" })
   end,
 }
