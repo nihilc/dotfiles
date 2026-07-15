@@ -11,7 +11,7 @@ return {
       pattern = "typst",
       callback = function()
         vim.keymap.set("n", "<leader>tp", "<cmd>TypstPreviewToggle<cr>", { desc = "Typst Preview" })
-        vim.keymap.set("n", "<leader>ts", "<cmd>TypstPreviewSyncCursor", { desc = "Typst Preview Sync" })
+        vim.keymap.set("n", "<leader>ts", "<cmd>TypstPreviewSyncCursor<cr>", { desc = "Typst Preview Sync" })
       end,
     })
   end,
