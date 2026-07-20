@@ -60,6 +60,7 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+alias nvim-test="NVIM_APPNAME=nvim-test nvim"
 
 # Autocmd
 eval "$(fzf --zsh)"
