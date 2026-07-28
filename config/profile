@@ -8,6 +8,7 @@ fi
 
 # PATH
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/share/cargo/bin"
 
 # Env
 export EDITOR="$(which nvim)"
