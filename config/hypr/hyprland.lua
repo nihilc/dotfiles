@@ -16,13 +16,13 @@ hl.monitor({ output = "eDP-1", disabled = true })
 ---- MY PROGRAMS ----
 ---------------------
 
-local menu = "vicinae toggle"
+local ipc = "noctalia msg "
+local menu = ipc .. "panel-toggle launcher"
+local clipboard = ipc .. "panel-toggle clipboard"
 local terminal = "ghostty"
 local fileManagerGui = "nautilus"
 local fileManagerTui = terminal .. " -e yazi"
 local screenshot = "hyprshot -o ~/Pictures/Screenshots -f screenshot-$(date +'%F-%H%M%S').png"
-local clipboard = "vicinae vicinae://launch/clipboard/history"
-local ipc = "qs -c noctalia-shell ipc call "
 
 -------------------
 ---- AUTOSTART ----
@@ -31,10 +31,7 @@ local ipc = "qs -c noctalia-shell ipc call "
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 
 hl.on("hyprland.start", function()
-	hl.exec_cmd("hyprpaper")
-	hl.exec_cmd("hyprsunset")
-	hl.exec_cmd("vicinae server")
-	hl.exec_cmd("qs -c noctalia-shell")
+	hl.exec_cmd("noctalia")
 end)
 
 -------------------------------
@@ -207,12 +204,14 @@ local mainMod = "SUPER"
 -- See https://wiki.hypr.land/Configuring/Basics/Binds/
 
 -- System / Shell
--- hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-hl.bind(mainMod .. " + ALT + Q", hl.dsp.exec_cmd(ipc .. "sessionMenu toggle"))
-hl.bind(mainMod .. " + ALT + V", hl.dsp.exec_cmd(ipc .. "volume togglePanel"))
-hl.bind(mainMod .. " + ALT + B", hl.dsp.exec_cmd(ipc .. "bar toggle"))
-hl.bind(mainMod .. " + ALT + N", hl.dsp.exec_cmd(ipc .. "notifications toggleHistory"))
-hl.bind(mainMod .. " + ALT + M", hl.dsp.exec_cmd(ipc .. "media toggle"))
+hl.bind(mainMod .. " + ALT + Q", hl.dsp.exec_cmd(ipc .. "panel-toggle session"))
+hl.bind(mainMod .. " + ALT + Z", hl.dsp.exec_cmd(ipc .. "bar-toggle"))
+hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center calendar"))
+hl.bind(mainMod .. " + ALT + V", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center audio"))
+hl.bind(mainMod .. " + ALT + B", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
+hl.bind(mainMod .. " + ALT + N", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center notifications"))
+hl.bind(mainMod .. " + ALT + M", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center media"))
+hl.bind(mainMod .. " + ALT + Comma", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 
 -- Programs
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
@@ -221,9 +220,9 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManagerGui))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(fileManagerTui))
 -- Utilities
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
-hl.bind("Print", hl.dsp.exec_cmd(screenshot .. " -m region"))
-hl.bind("CTRL + Print", hl.dsp.exec_cmd(screenshot .. " -m window"))
-hl.bind("SHIFT + Print", hl.dsp.exec_cmd(screenshot .. " -m output -m active"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(screenshot .. " -m region"))
+hl.bind(mainMod .. " + CTRL + P", hl.dsp.exec_cmd(screenshot .. " -m window"))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd(screenshot .. " -m output -m active"))
 
 -- Windows
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
@@ -272,17 +271,21 @@ hl.bind(mainMod .. " + CTRL + K", hl.dsp.window.move({ into_group = "u" }))
 hl.bind(mainMod .. " + CTRL + H", hl.dsp.window.move({ into_group = "l" }))
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.window.move({ into_group = "r" }))
 
--- Laptop multimedia and brightness keys
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume increase"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume decrease"), { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume muteOutput"), { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(ipc .. "volume muteInput"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness increase"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness decrease"), { locked = true, repeating = true })
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+-- Volume and Mic
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume-up"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume-down"), { locked = true, repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume-mute"), { locked = true, repeating = true })
+hl.bind("CTRL + XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "mic-volume-up"), { locked = true, repeating = true })
+hl.bind("CTRL + XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "mic-volume-down"), { locked = true, repeating = true })
+hl.bind("CTRL + XF86AudioMute", hl.dsp.exec_cmd(ipc .. "mic-mute"), { locked = true, repeating = true })
+-- Media
+hl.bind("XF86AudioNext", hl.dsp.exec_cmd(ipc .. "media next"), { locked = true })
+hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(ipc .. "media previous"), { locked = true })
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(ipc .. "media toggle"), { locked = true })
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd(ipc .. "media toggle"), { locked = true })
+-- Brightness
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"), { locked = true, repeating = true })
 
 --------------------------------
 ---- WINDOWS AND WORKSPACES ----
