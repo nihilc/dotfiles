@@ -38,4 +38,4 @@ keybind = ctrl+shift+tab=previous_tab
 # window
 keybind = f11=toggle_fullscreen
 
-theme = Vague
+theme = noctalia
