@@ -216,6 +216,7 @@ enabled = []
 app_icon_color = "on_surface_variant"
 avatar_path = "/home/nihilc/Pictures/Wallpapers/gifs/reze-eye.gif"
 font_family = "Inter"
+polkit_agent = true
 
     [shell.launcher]
     categories = false
