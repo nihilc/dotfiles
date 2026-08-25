@@ -19,6 +19,7 @@ hl.monitor({ output = "eDP-1", disabled = true })
 local ipc = "noctalia msg "
 local menu = ipc .. "panel-toggle launcher"
 local clipboard = ipc .. "panel-toggle clipboard"
+local colorpicker = "hyprpicker"
 local terminal = "ghostty"
 local fileManagerGui = "nautilus"
 local fileManagerTui = terminal .. " -e yazi"
@@ -219,6 +220,7 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManagerGui))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(fileManagerTui))
 -- Utilities
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(colorpicker))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(screenshot .. " -m region"))
 hl.bind(mainMod .. " + CTRL + P", hl.dsp.exec_cmd(screenshot .. " -m window"))
