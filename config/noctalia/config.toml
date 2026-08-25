@@ -248,6 +248,7 @@ polkit_agent = true
 
     [shell.launcher]
     categories = false
+    compact = true
 
     [shell.mpris]
     blacklist = [ "firefox" ]
@@ -301,6 +302,7 @@ wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "ghostty", "kcolorscheme", "qt" ]
+    enable_community_templates = false
 
 [wallpaper.default]
 path = "/home/nihilc/Pictures/Wallpapers/anime/reze-demon.jpg"

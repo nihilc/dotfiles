@@ -347,3 +347,6 @@ hl.window_rule({ workspace = "special:1", match = { class = ".*youtube_music" } 
 hl.window_rule({ workspace = "special:2", match = { class = "com.obsproject.Studio" } })
 hl.window_rule({ workspace = "3", match = { class = "steam" } })
 hl.window_rule({ workspace = "4", match = { class = "vesktop" } })
+
+-- For Noctalia Color templates
+require("noctalia").apply_theme()
