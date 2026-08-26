@@ -316,3 +316,4 @@ hl.window_rule({ workspace = "4", match = { class = "vesktop" } })
 
 -- For Noctalia Color templates
 require("noctalia").apply_theme()
+hl.config({ group = { groupbar = { gradients = false } } })
