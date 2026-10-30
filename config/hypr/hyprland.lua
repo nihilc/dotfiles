@@ -19,7 +19,7 @@ hl.monitor({ output = "eDP-1", disabled = true })
 local ipc = "noctalia msg "
 local menu = ipc .. "panel-toggle launcher"
 local clipboard = ipc .. "panel-toggle clipboard"
-local colorpicker = "hyprpicker"
+local colorpicker = "hyprpicker | wl-copy"
 local terminal = "ghostty"
 local fileManagerGui = "nautilus"
 local fileManagerTui = terminal .. " -e yazi"
