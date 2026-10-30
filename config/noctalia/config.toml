@@ -1,14 +1,18 @@
 [bar.default]
 capsule = true
-end = [ "group:g1", "group:g4", "group:g5" ]
+capsule_radius = 8
+end = [ "group:g6", "group:g7", "bar_2", "group:g8" ]
+margin_ends = 240
+radius = 8
 start = [ "group:g3", "group:g2" ]
 widget_spacing = 8
 
     [[bar.default.capsule_group]]
     accordion = false
     accordion_direction = "end"
+    border_width = 1.0
     enabled = true
-    fill = "surface_variant"
+    fill = "surface_container"
     id = "g1"
     members = [ "audio_visualizer", "media" ]
     opacity = 1.0
@@ -17,8 +21,9 @@ widget_spacing = 8
     [[bar.default.capsule_group]]
     accordion = false
     accordion_direction = "end"
+    border_width = 1.0
     enabled = true
-    fill = "surface_variant"
+    fill = "surface_container"
     id = "g2"
     members = [ "workspaces", "active_window" ]
     opacity = 1.0
@@ -27,8 +32,9 @@ widget_spacing = 8
     [[bar.default.capsule_group]]
     accordion = false
     accordion_direction = "end"
+    border_width = 1.0
     enabled = true
-    fill = "surface_variant"
+    fill = "surface_container"
     id = "g3"
     members = [ "control-center", "session" ]
     opacity = 1.0
@@ -37,25 +43,68 @@ widget_spacing = 8
     [[bar.default.capsule_group]]
     accordion = false
     accordion_direction = "end"
+    border_width = 1.0
     enabled = true
-    fill = "surface_variant"
+    fill = "surface_container"
     id = "g4"
-    members = [ "input_volume", "volume", "bluetooth", "network" ]
+    members = [ "input_volume", "volume", "bluetooth", "network", "bar" ]
     opacity = 1.0
     padding = 6.0
 
     [[bar.default.capsule_group]]
     accordion = false
     accordion_direction = "end"
+    border_width = 1.0
     enabled = true
-    fill = "surface_variant"
+    fill = "surface_container"
     id = "g5"
     members = [ "tray", "caffeine", "notifications" ]
     opacity = 1.0
     padding = 6.0
 
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
+    enabled = true
+    fill = "surface_container"
+    id = "g6"
+    members = [ "audio_visualizer", "media" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 8.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
+    enabled = true
+    fill = "surface_container"
+    id = "g7"
+    members = [ "input_volume", "volume", "bluetooth", "network" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 8.0
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1.0
+    enabled = true
+    fill = "surface_container"
+    id = "g8"
+    members = [ "tray", "caffeine", "notifications" ]
+    opacity = 1.0
+    padding = 6.0
+    radius = 8.0
+
+[calendar]
+
 [control_center]
 hidden_tabs = [ "monitor" ]
+
+    [control_center.calendar]
+    show_events_card = false
 
     [[control_center.shortcuts]]
     type = "wifi"
@@ -163,7 +212,7 @@ widget_order = [ "lockscreen-login-box@FALLBACK", "lockscreen-login-box@HDMI-A-1
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@FALLBACK".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -190,7 +239,7 @@ widget_order = [ "lockscreen-login-box@FALLBACK", "lockscreen-login-box@HDMI-A-1
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -217,7 +266,7 @@ widget_order = [ "lockscreen-login-box@FALLBACK", "lockscreen-login-box@HDMI-A-1
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -234,16 +283,22 @@ widget_order = [ "lockscreen-login-box@FALLBACK", "lockscreen-login-box@HDMI-A-1
 
 [nightlight]
 enabled = true
-force = true
 temperature_night = 3500
 
+[osd]
+position = "bottom_center"
+
+[plugin_settings."rylos/syncthing"]
+panel_open_near_click = false
+
 [plugins]
-enabled = []
+enabled = [ "rylos/syncthing" ]
 
 [shell]
 app_icon_color = "on_surface_variant"
 avatar_path = "/home/nihilc/Pictures/Wallpapers/gifs/reze-eye.gif"
-font_family = "Inter"
+corner_radius_scale = 0.60000000894069672
+input_borders = false
 polkit_agent = true
 
     [shell.launcher]
@@ -294,14 +349,15 @@ polkit_agent = true
     variant = "destructive"
 
 [theme]
-builtin = "Catppuccin"
-community_palette = "Catppuccin Macchiato Mauve"
+builtin = "Ayu"
+community_palette = "Alpenglow"
 custom_palette = "Vague"
+mode = "dark"
 source = "custom"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "gtk3", "gtk4", "ghostty", "kcolorscheme", "qt" ]
+    builtin_ids = [ "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "qt" ]
     enable_community_templates = false
 
 [wallpaper.default]
@@ -313,6 +369,12 @@ path = "/home/nihilc/Pictures/Wallpapers/anime/reze-demon.jpg"
 [wallpaper.monitors.HDMI-A-1]
 path = "/home/nihilc/Pictures/Wallpapers/anime/reze-demon.jpg"
 
+[[wallpaper.favorite]]
+custom_palette = "Vague"
+palette_source = "custom"
+path = "/home/nihilc/Pictures/Wallpapers/anime/reze-demon.jpg"
+theme_mode = "dark"
+
 [widget.active_window]
 display = "text_only"
 min_length = 10
@@ -323,6 +385,12 @@ color_2 = "secondary"
 interactive = false
 mirrored = false
 show_when_idle = true
+
+[widget.bar]
+type = "rylos/syncthing:bar"
+
+[widget.bar_2]
+type = "rylos/syncthing:bar"
 
 [widget.clock]
 tooltip_format = "{:%a %d %b %H:%M}"
