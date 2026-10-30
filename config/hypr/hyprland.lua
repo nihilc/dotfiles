@@ -91,7 +91,7 @@ hl.config({
 			round_only_edges = false,
 			gaps_in = 4,
 			gaps_out = 4,
-			indicator_gap = -4,
+			keep_upper_gap = false,
 			indicator_height = 8,
 		},
 	},
